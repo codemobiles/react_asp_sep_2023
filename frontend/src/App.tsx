@@ -87,7 +87,7 @@ export default function App() {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       {/* My Header */}
-      <Header version="2.0"/>
+      <Header version="2.0" />
       {/* Header */}
       {/* <AppBar position="fixed" open={open}>
         <Toolbar>
