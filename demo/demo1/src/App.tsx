@@ -30,6 +30,7 @@ export default function App({}: Props) {
         <li>Tmp1: {tmp1}</li>
         <li>TmpS: {tmp1}, {tmp2}, {tmp3}, {tmp4}, </li>
         <li>TmpS: {tmp5}, {tmp6}, {tmp7}, {tmp8}, </li>
+        <li><button onClick={showAlert}>Click Me</button></li>
       </ul>
       </div>
   )
