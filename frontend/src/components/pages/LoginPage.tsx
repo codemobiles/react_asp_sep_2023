@@ -1,5 +1,6 @@
 import React from "react";
-import cmLogo from "./../../assets/images/authen_header.jpg";
+// import cmLogo from "./../../assets/images/authen_header.jpg";
+import cmLogo from "@/assets/images/authen_header.png";
 
 type Props = {};
 
