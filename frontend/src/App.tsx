@@ -1,11 +1,17 @@
+import { Stack, Button } from "@mui/material";
 import React from "react";
 
 type Props = {};
 
 export default function App({}: Props) {
   return (
-    <div className="text-orange-500 bg-green-300 w-[100px] h-[100px] text-3xl text-center m-5 p-5 rounded-md">
+    <div>
       App
+      <Stack spacing={2} direction="row">
+        <Button variant="text">Text</Button>
+        <Button variant="contained">Contained</Button>
+        <Button variant="outlined">Outlined</Button>
+      </Stack>
     </div>
   );
 }
