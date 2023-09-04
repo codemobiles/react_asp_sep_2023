@@ -17,8 +17,15 @@ export default function App({}: Props) {
   const tmp7:string = "CodeMobiles"
   const tmp8:number = 1.12
 
+  let count = 0
+
   function showAlert() {
     alert("Hey")
+  }
+
+  const add = ()=>{
+   count++ 
+   console.log("Count: " + count)
   }
   
   // JSX
@@ -31,6 +38,8 @@ export default function App({}: Props) {
         <li>TmpS: {tmp1}, {tmp2}, {tmp3}, {tmp4}, </li>
         <li>TmpS: {tmp5}, {tmp6}, {tmp7}, {tmp8}, </li>
         <li><button onClick={showAlert}>Click Me</button></li>
+        <li><button onClick={()=>showAlert()}>Click Me</button></li>
+        <li><button onClick={()=>add()}>{count}</button></li>
       </ul>
       </div>
   )
