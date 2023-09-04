@@ -86,10 +86,8 @@ export default function App() {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      {/* My Header */}
-      <Header version="2.0" />
       {/* Header */}
-      {/* <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -104,7 +102,7 @@ export default function App() {
             Persistent drawer
           </Typography>
         </Toolbar>
-      </AppBar> */}
+      </AppBar>
       {/* Menu */}
       <Drawer
         sx={{
