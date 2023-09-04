@@ -9,10 +9,20 @@ type Props = {};
 export default function LoginPage({}: Props) {
   const [user, setUser] = React.useState<User>({ username: "", password: "" });
 
+  const handleSubmit = () => {
+    alert(JSON.stringify(user));
+  };
+
   return (
     <Box>
       <Typography variant="h2">Login</Typography>
-      <form className="mt-5">
+      <form
+        className="mt-5"
+        onSubmit={(event) => {
+          event.preventDefault();
+          handleSubmit();
+        }}
+      >
         <Stack direction={"column"} spacing={3}>
           {/* Username */}
           <TextField
@@ -37,7 +47,9 @@ export default function LoginPage({}: Props) {
 
           <span># Debug {JSON.stringify(user)}</span>
 
-          <Button variant="contained">Login</Button>
+          <Button variant="contained" type="submit">
+            Login
+          </Button>
           <Button variant="text">Don't have an account?</Button>
         </Stack>
       </form>
