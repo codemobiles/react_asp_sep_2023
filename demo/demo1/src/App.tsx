@@ -7,6 +7,15 @@ export default function App({}: Props) {
   
   // JSX
   return (
-    <div style={{padding: 40}}>React</div>
+    <div style={{paddingLeft: 40}}>
+      
+      React
+      <ul>
+        <li>xxx</li>
+        <li>xxx</li>
+        <li>xxx</li>
+      </ul>
+      
+      </div>
   )
 }
