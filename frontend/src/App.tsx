@@ -85,6 +85,7 @@ export default function App() {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
+      {/* Header */}
       <AppBar position="fixed" open={open}>
         <Toolbar>
           <IconButton
@@ -101,6 +102,7 @@ export default function App() {
           </Typography>
         </Toolbar>
       </AppBar>
+      {/* Menu */}
       <Drawer
         sx={{
           width: drawerWidth,
@@ -150,6 +152,7 @@ export default function App() {
           ))}
         </List>
       </Drawer>
+      {/* Body */}
       <Main open={open}>
         <DrawerHeader />
         <Typography paragraph>
