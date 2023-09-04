@@ -15,7 +15,14 @@ export default function LoginPage({}: Props) {
       <form className="mt-5">
         <Stack direction={"column"} spacing={3}>
           {/* Username */}
-          <TextField id="username" label="Username" variant="outlined" />
+          <TextField
+            id="username"
+            label="Username"
+            variant="outlined"
+            onChange={(event) =>
+              setUser({ username: event.target.value, password: user.password })
+            }
+          />
 
           {/* Password */}
           <TextField
@@ -23,6 +30,9 @@ export default function LoginPage({}: Props) {
             label="Password"
             variant="outlined"
             type="password"
+            onChange={(event) =>
+              setUser({ username: user.username, password: event.target.value })
+            }
           />
 
           <span># Debug {JSON.stringify(user)}</span>
