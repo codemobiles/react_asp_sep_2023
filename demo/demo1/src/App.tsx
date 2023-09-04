@@ -16,6 +16,10 @@ export default function App({}: Props) {
   const tmp6:boolean = true
   const tmp7:string = "CodeMobiles"
   const tmp8:number = 1.12
+
+  function showAlert() {
+    alert("Hey")
+  }
   
   // JSX
   return (
