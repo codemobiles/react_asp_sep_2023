@@ -6,6 +6,8 @@ import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 type Props = {};
 
 export default function LoginPage({}: Props) {
+  const [user, setUser] = React.useState({ username: "", password: "" });
+
   return (
     <Box>
       <Typography variant="h2">Login</Typography>
@@ -21,6 +23,8 @@ export default function LoginPage({}: Props) {
             variant="outlined"
             type="password"
           />
+
+          <span># Debug {JSON.stringify(user)}</span>
 
           <Button variant="contained">Login</Button>
           <Button variant="text">Don't have an account?</Button>
