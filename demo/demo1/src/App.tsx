@@ -18,6 +18,7 @@ export default function App({}: Props) {
   const tmp8:number = 1.12
 
   let count = 0
+  const [count1, setCount1] = React.useState(0)
 
   function showAlert() {
     alert("Hey")
@@ -25,6 +26,7 @@ export default function App({}: Props) {
 
   const add = ()=>{
    count++ 
+   setCount1(count1+1)
    console.log("Count: " + count)
   }
   
@@ -33,13 +35,14 @@ export default function App({}: Props) {
     <div style={{paddingLeft: 40}}>      
       <h1>React</h1>
       <ul>
-        <li>Simple Text</li>
+        <li>Simple Text</li> 
         <li>Tmp1: {tmp1}</li>
         <li>TmpS: {tmp1}, {tmp2}, {tmp3}, {tmp4}, </li>
         <li>TmpS: {tmp5}, {tmp6}, {tmp7}, {tmp8}, </li>
         <li><button onClick={showAlert}>Click Me</button></li>
         <li><button onClick={()=>showAlert()}>Click Me</button></li>
         <li><button onClick={()=>add()}>{count}</button></li>
+        <li><button onClick={()=>add()}>{count1}</button></li>
       </ul>
       </div>
   )
