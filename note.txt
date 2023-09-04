@@ -1,3 +1,6 @@
 Welcome to React and .NET Worlds
 
 - document and master project: https://drive.google.com/file/d/1ykWBXdFC29Mz4Y7mODknecYNSi9Rllag/view?usp=sharing
+
+
+- npm create vite@latest
