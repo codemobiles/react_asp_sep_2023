@@ -1,7 +1,7 @@
 import React from "react";
 
 import cmLogo from "@/assets/images/authen_header.jpg";
-import { Box, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 
 type Props = {};
 
@@ -21,6 +21,9 @@ export default function LoginPage({}: Props) {
             variant="outlined"
             type="password"
           />
+
+          <Button variant="contained">Login</Button>
+          <Button variant="text">Don't have an account?</Button>
         </Stack>
       </form>
     </Box>
