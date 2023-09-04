@@ -24,7 +24,12 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function Menu({ open, handleDrawerClose }: any) {
+interface MenuProps {
+  open: boolean;
+  handleDrawerClose: () => void;
+}
+
+export default function Menu({ open, handleDrawerClose }: MenuProps) {
   const theme = useTheme();
 
   return (
