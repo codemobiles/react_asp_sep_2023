@@ -4,4 +4,5 @@ Welcome to React and .NET Worlds
 
 
 - npm create vite@latest
+- yarn create vite
 - npm i -g yarn 
