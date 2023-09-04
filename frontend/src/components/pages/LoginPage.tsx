@@ -2,11 +2,12 @@ import React from "react";
 
 import cmLogo from "@/assets/images/authen_header.jpg";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import { User } from "@/types/user.type";
 
 type Props = {};
 
 export default function LoginPage({}: Props) {
-  const [user, setUser] = React.useState({ username: "", password: "" });
+  const [user, setUser] = React.useState<User>({ username: "", password: "" });
 
   return (
     <Box>
