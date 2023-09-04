@@ -39,13 +39,21 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 export default function App() {
   const [open, setOpen] = React.useState(false);
 
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       {/* Header */}
-      <Header open={open} />
+      <Header open={open} handleDrawerOpen={handleDrawerOpen} />
       {/* Menu */}
-      <Menu open={open} />
+      <Menu open={open} handleDrawerClose={handleDrawerClose} />
       {/* Body */}
       <Main open={open}>
         <DrawerHeader />
