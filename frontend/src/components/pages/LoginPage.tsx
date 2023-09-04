@@ -7,7 +7,7 @@ export default function LoginPage({}: Props) {
   return (
     <div>
       LoginPage
-      <img src={cmLogo} alt="" />
+      <img src={cmLogo} alt="" className="w-[300px]" />
     </div>
   );
 }
