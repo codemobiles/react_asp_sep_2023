@@ -23,10 +23,10 @@ namespace backend.Controllers.v1
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginViewModel loginViewModel)
         {
-            // var user = _mapper.Mapper<User>(loginViewModel);
-            // return Ok(new {result = userViewModel});
+            var user = _autoMapper.Map<User>(loginViewModel);
+            return Ok(new {result = user});
 
-            return Ok();
+            
         }
 
     }
