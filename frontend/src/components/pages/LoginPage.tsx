@@ -1,25 +1,15 @@
-import React from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
-import cmLogo from "@/assets/images/authen_header.jpg";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { User } from "@/types/user.type";
+import { useForm } from "react-hook-form";
 
-type Props = {};
+export default function LoginPage() {
+  const initialValue: User = { username: "", password: "" };
 
-export default function LoginPage({}: Props) {
-  const [user, setUser] = React.useState<User>({ username: "", password: "" });
-
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<User>({
+  const { control, handleSubmit } = useForm<User>({
     defaultValues: initialValue,
   });
-
-  const handleSubmit = () => {
-    alert(JSON.stringify(user));
-  };
 
   return (
     <Box>
