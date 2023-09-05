@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using backend.Models;
 using Microsoft.AspNetCore.Mvc;
 //using Controllers.Models;
 
@@ -15,10 +16,10 @@ namespace backend.Controllers.v1
         {
         }
 
-        [HttpGet("login")]
-        public IActionResult Login()
+        [HttpPost("login")]
+        public IActionResult Login([FromBody] User userViewModel)
         {
-            return Ok("Login");
+            return Ok(new {result = userViewModel});
         }
 
     }
