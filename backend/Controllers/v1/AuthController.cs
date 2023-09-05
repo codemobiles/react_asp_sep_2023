@@ -25,10 +25,31 @@ namespace backend.Controllers.v1
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginViewModel loginViewModel)
+        public IActionResult Login([FromBody] LoginViewModel userViewModel)
         {
-            var user = _autoMapper.Map<User>(loginViewModel);
-            return Ok(new {result = user});            
+            try
+            {
+                // mapper tutorial - readme_mapper.md
+                var user = _autoMapper.Map<User>(userViewModel);                
+                (User? result, string token) = _authRepository.Login(user);
+
+                if (result == null)
+                {
+                    return Unauthorized(new { token = "", message = "username invalid" });
+                }
+
+                if (String.IsNullOrEmpty(token))
+                {
+                    return Unauthorized(new { token = "", message = "password invalid" });
+                }
+
+                return Ok(new { token = token, message = "login successfully" });
+            }
+            catch (Exception error)
+            {
+                
+                return StatusCode(500, new { message = error });
+            }         
         }
 
         [HttpPost("register")]
