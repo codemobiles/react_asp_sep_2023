@@ -16,6 +16,8 @@ namespace backend.Installers
             installers.ForEach(installer => installer.InstallServices(services, configuration));
         }
 
-        
+        public static void Lek(this string obj){
+           Console.WriteLine("Hey");     
+        }
     }
 }

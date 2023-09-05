@@ -14,6 +14,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.InstallServiceInAssembly(builder.Configuration);
 
+// "aString".Lek();
+
 
 
 // builder.Services.AddDbContext<DatabaseContext>(options=>options.UseSqlServer(
