@@ -20,9 +20,9 @@ export default function LoginPage() {
           <Controller
             control={control}
             name="username"
-            render={(obj) => (
+            render={({ field }) => (
               <TextField
-                {...obj.field}
+                {...field}
                 id="username"
                 label="Username"
                 variant="outlined"
@@ -31,11 +31,17 @@ export default function LoginPage() {
           />
 
           {/* Password */}
-          <TextField
-            id="passowrd"
-            label="Password"
-            variant="outlined"
-            type="password"
+          <Controller
+            control={control}
+            name="password"
+            render={({ field }) => (
+              <TextField
+                {...field}
+                label="Password"
+                variant="outlined"
+                type="password"
+              />
+            )}
           />
 
           <Button variant="contained" type="submit">
