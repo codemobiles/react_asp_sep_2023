@@ -16,13 +16,6 @@ builder.Services.InstallServiceInAssembly(builder.Configuration);
 
 // "aString".Lek();
 
-
-
-// builder.Services.AddDbContext<DatabaseContext>(options=>options.UseSqlServer(
-//     builder.Configuration.GetConnectionString("ConnectionSQLServer"))
-// );
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

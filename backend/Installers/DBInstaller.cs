@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace backend.Installers
 {
     
-    public class DBInstaller : IInstaller
+    public class  DBInstaller : IInstaller
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
