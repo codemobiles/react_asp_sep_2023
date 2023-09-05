@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using backend.Models;
+using backend.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 //using Controllers.Models;
 
@@ -17,9 +18,12 @@ namespace backend.Controllers.v1
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] User userViewModel)
+        public IActionResult Login([FromBody] LoginViewModel loginViewModel)
         {
-            return Ok(new {result = userViewModel});
+            // var user = AutoMapper.Mapper<User>(loginViewModel);
+            // return Ok(new {result = userViewModel});
+
+            return Ok();
         }
 
     }
