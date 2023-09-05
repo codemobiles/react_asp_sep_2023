@@ -5,7 +5,7 @@ import { User } from "@/types/user.type";
 import { Controller, useForm } from "react-hook-form";
 
 export default function LoginPage() {
-  const initialValue: User = { username: "", password: "" };
+  const initialValue: User = { username: "admin", password: "" };
 
   const { control, handleSubmit } = useForm<User>({
     defaultValues: initialValue,
@@ -21,7 +21,12 @@ export default function LoginPage() {
             control={control}
             name="username"
             render={(obj) => (
-              <TextField id="username" label="Username" variant="outlined" />
+              <TextField
+                {...obj.field}
+                id="username"
+                label="Username"
+                variant="outlined"
+              />
             )}
           />
 
