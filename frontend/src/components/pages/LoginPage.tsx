@@ -14,7 +14,11 @@ const formValidateSchema = Yup.object().shape({
 export default function LoginPage() {
   const initialValue: User = { username: "admin", password: "1234" };
 
-  const { control, handleSubmit } = useForm<User>({
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<User>({
     defaultValues: initialValue,
     resolver: yupResolver(formValidateSchema),
   });
@@ -35,6 +39,8 @@ export default function LoginPage() {
             render={({ field }) => (
               <TextField
                 {...field}
+                error={Boolean(errors.username?.message)}
+                helperText={errors.username?.message}
                 id="username"
                 label="Username"
                 variant="outlined"
@@ -47,7 +53,13 @@ export default function LoginPage() {
             control={control}
             name="password"
             render={({ field }) => (
-              <TextField {...field} label="Password" variant="outlined" />
+              <TextField
+                {...field}
+                label="Password"
+                variant="outlined"
+                error={Boolean(errors.password?.message)}
+                helperText={errors.password?.message}
+              />
             )}
           />
 
