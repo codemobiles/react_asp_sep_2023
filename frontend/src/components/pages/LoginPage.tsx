@@ -7,7 +7,9 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const formValidateSchema = Yup.object().shape({
-  username: Yup.string().required("Username must be more than 3 letters"),
+  username: Yup.string()
+    .required("Username must be more than 3 letters")
+    .min(4),
   password: Yup.string().required("Password is required"),
 });
 
