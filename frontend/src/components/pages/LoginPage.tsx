@@ -9,6 +9,14 @@ type Props = {};
 export default function LoginPage({}: Props) {
   const [user, setUser] = React.useState<User>({ username: "", password: "" });
 
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<User>({
+    defaultValues: initialValue,
+  });
+
   const handleSubmit = () => {
     alert(JSON.stringify(user));
   };
