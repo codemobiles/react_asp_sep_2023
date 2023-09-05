@@ -35,7 +35,8 @@ namespace backend.Controllers.v1
         public IActionResult Register([FromBody] LoginViewModel viewmodel)
         {
             var user = _autoMapper.Map<User>(viewmodel);
-            return Ok(new {result = user});            
+            _authRepository.Register(user);
+            return Ok();            
         }
 
     }
