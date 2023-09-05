@@ -1,4 +1,6 @@
 using AutoMapper;
+using backend.Database;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddDbContext<DatabaseContext>(options=>options.UseSqlServer(
+    builder.Configuration.GetConnectionString("ConnectionSQLServer"))
+);
+
 
 var app = builder.Build();
 
