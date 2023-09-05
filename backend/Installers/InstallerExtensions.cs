@@ -15,5 +15,7 @@ namespace backend.Installers
             .Select(Activator.CreateInstance).Cast<IInstaller>().ToList();
             installers.ForEach(installer => installer.InstallServices(services, configuration));
         }
+
+        
     }
 }
