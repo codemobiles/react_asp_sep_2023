@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using backend.Models;
 using backend.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-//using Controllers.Models;
+using AutoMapper;
 
 namespace backend.Controllers.v1
 {
@@ -13,9 +13,11 @@ namespace backend.Controllers.v1
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly AutoMapper _autoMapper;
+
         public AuthController(AutoMapper autoMapper)
         {
-
+            _autoMapper = autoMapper;
         }
 
         [HttpPost("login")]
