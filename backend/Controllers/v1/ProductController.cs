@@ -1,10 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+//using backend.Models;
+
 using backend.Database;
 using Microsoft.AspNetCore.Mvc;
-//using backend.Models;
 
 namespace backend.Controllers.v1
 {
@@ -12,8 +10,10 @@ namespace backend.Controllers.v1
     [ApiController]
     public class ProductController : ControllerBase
     {
+        private readonly DatabaseContext _databaseContext;
         public ProductController(DatabaseContext databaseContext)
         {
+            _databaseContext = databaseContext;
         }
 
         [HttpGet("")]
