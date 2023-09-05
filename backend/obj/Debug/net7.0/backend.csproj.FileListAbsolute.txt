@@ -31,3 +31,5 @@
 /Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/obj/Debug/net7.0/backend.pdb
 /Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/obj/Debug/net7.0/backend.genruntimeconfig.cache
 /Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/obj/Debug/net7.0/ref/backend.dll
+/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/bin/Debug/net7.0/AutoMapper.dll
+/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
