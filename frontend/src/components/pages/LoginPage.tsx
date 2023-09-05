@@ -30,7 +30,7 @@ export default function LoginPage({}: Props) {
             label="Username"
             variant="outlined"
             onChange={(event) =>
-              setUser({ username: event.target.value, password: user.password })
+              setUser({ ...user, username: event.target.value })
             }
           />
 
@@ -41,7 +41,7 @@ export default function LoginPage({}: Props) {
             variant="outlined"
             type="password"
             onChange={(event) =>
-              setUser({ username: user.username, password: event.target.value })
+              setUser({ ...user, password: event.target.value })
             }
           />
 
