@@ -19,7 +19,8 @@ namespace backend.Controllers.v1
         [HttpGet("")]
         public IActionResult GetProducts()
         {
-            return Ok();
+            var products = _databaseContext.Products.ToList();
+            return Ok(products);
         }
     }
 }
