@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using backend.Models;
+// using backend.Models;
 using Microsoft.AspNetCore.Mvc;
 //using backend.Models;
 
@@ -40,11 +40,11 @@ namespace backend.Controllers.v1
             return Ok(new List<string> {"Method2", "Flutter", "ReactJS", "1234" }) ;
         }
         
-        [HttpPost("login")]
-        public IActionResult Login([FromBody] User user)
-        {
-            return Ok(new {result= "ok", echo = user});
-        }
+        // [HttpPost("login")]
+        // public IActionResult Login([FromBody] User user)
+        // {
+        //     return Ok(new {result= "ok", echo = user});
+        // }
           
     }
 }

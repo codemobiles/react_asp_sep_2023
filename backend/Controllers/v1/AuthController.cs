@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using backend.Models;
+// using backend.Models;
 using backend.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
@@ -20,14 +20,14 @@ namespace backend.Controllers.v1
             _autoMapper = autoMapper;
         }
 
-        [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginViewModel loginViewModel)
-        {
-            var user = _autoMapper.Map<User>(loginViewModel);
-            return Ok(new {result = user});
+        // [HttpPost("login")]
+        // public IActionResult Login([FromBody] LoginViewModel loginViewModel)
+        // {
+        //     var user = _autoMapper.Map<User>(loginViewModel);
+        //     return Ok(new {result = user});
 
             
-        }
+        // }
 
     }
 }
