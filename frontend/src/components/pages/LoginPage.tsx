@@ -11,10 +11,14 @@ export default function LoginPage() {
     defaultValues: initialValue,
   });
 
+  const doSubmit = (user: User) => {
+    alert(JSON.stringify(user));
+  };
+
   return (
     <Box>
       <Typography variant="h2">Login</Typography>
-      <form className="mt-5">
+      <form className="mt-5" onSubmit={handleSubmit(doSubmit)}>
         <Stack direction={"column"} spacing={3}>
           {/* Username */}
           <Controller
