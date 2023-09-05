@@ -13,9 +13,9 @@ namespace backend.Controllers.v1
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly AutoMapper _autoMapper;
+        private readonly IMapper _autoMapper;
 
-        public AuthController(AutoMapper autoMapper)
+        public AuthController(IMapper autoMapper)
         {
             _autoMapper = autoMapper;
         }
