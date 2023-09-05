@@ -13,14 +13,15 @@ namespace backend.Controllers.v1
     [ApiController]
     public class AuthController : ControllerBase
     {
-        public AuthController()
+        public AuthController(AutoMapper autoMapper)
         {
+
         }
 
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginViewModel loginViewModel)
         {
-            // var user = AutoMapper.Mapper<User>(loginViewModel);
+            // var user = _mapper.Mapper<User>(loginViewModel);
             // return Ok(new {result = userViewModel});
 
             return Ok();
