@@ -19,8 +19,7 @@ namespace backend.Services
         
 
         public AuthRepository(DatabaseContext context)
-        {
-        
+        {        
             _context = context;
         }
 
@@ -38,7 +37,7 @@ namespace backend.Services
 
         public void Register(User user)
         {
-            user.Password = CreatePasswordHash(user.Password!);
+            // user.Password = CreatePasswordHash(user.Password!);
             _context.Users.Add(user);
             _context.SaveChanges();
         }

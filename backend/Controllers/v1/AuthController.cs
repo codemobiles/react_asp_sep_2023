@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using backend.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
+using backend.Models;
+using backend.Services;
 
 namespace backend.Controllers.v1
 {
@@ -14,20 +16,27 @@ namespace backend.Controllers.v1
     public class AuthController : ControllerBase
     {
         private readonly IMapper _autoMapper;
+        private readonly IAuthRepository _authRepository;
 
-        public AuthController(IMapper autoMapper)
+        public AuthController(IMapper autoMapper, IAuthRepository authRepository)
         {
+            _authRepository = authRepository;
             _autoMapper = autoMapper;
         }
 
-        // [HttpPost("login")]
-        // public IActionResult Login([FromBody] LoginViewModel loginViewModel)
-        // {
-        //     var user = _autoMapper.Map<User>(loginViewModel);
-        //     return Ok(new {result = user});
+        [HttpPost("login")]
+        public IActionResult Login([FromBody] LoginViewModel loginViewModel)
+        {
+            var user = _autoMapper.Map<User>(loginViewModel);
+            return Ok(new {result = user});            
+        }
 
-            
-        // }
+        [HttpPost("register")]
+        public IActionResult Register([FromBody] LoginViewModel viewmodel)
+        {
+            var user = _autoMapper.Map<User>(viewmodel);
+            return Ok(new {result = user});            
+        }
 
     }
 }
