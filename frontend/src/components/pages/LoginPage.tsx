@@ -14,23 +14,10 @@ export default function LoginPage() {
   return (
     <Box>
       <Typography variant="h2">Login</Typography>
-      <form
-        className="mt-5"
-        onSubmit={(event) => {
-          event.preventDefault();
-          handleSubmit();
-        }}
-      >
+      <form className="mt-5">
         <Stack direction={"column"} spacing={3}>
           {/* Username */}
-          <TextField
-            id="username"
-            label="Username"
-            variant="outlined"
-            onChange={(event) =>
-              setUser({ ...user, username: event.target.value })
-            }
-          />
+          <TextField id="username" label="Username" variant="outlined" />
 
           {/* Password */}
           <TextField
@@ -38,12 +25,7 @@ export default function LoginPage() {
             label="Password"
             variant="outlined"
             type="password"
-            onChange={(event) =>
-              setUser({ ...user, password: event.target.value })
-            }
           />
-
-          <span># Debug {JSON.stringify(user)}</span>
 
           <Button variant="contained" type="submit">
             Login
