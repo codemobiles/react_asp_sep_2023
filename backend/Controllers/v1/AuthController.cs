@@ -15,7 +15,7 @@ namespace backend.Controllers.v1
         {
         }
 
-        [HttpGet("")]
+        [HttpGet("login")]
         public IActionResult Login()
         {
             return Ok("Login");
