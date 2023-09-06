@@ -35,7 +35,6 @@ export const removeWithDelay = createAsyncThunk("removeWithDelay", async () => {
 
 export const login = createAsyncThunk("auth/login", async (value: User) => {
   const result = await httpClient.post<LoginResult>(server.LOGIN_URL, value);
-  
   if (result.data.token) {
     const { token } = result.data;
     localStorage.setItem(server.TOKEN_KEY, token);

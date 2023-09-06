@@ -11,6 +11,9 @@ import StockPage from "./components/pages/StockPage";
 import { useSelector } from "react-redux";
 import { authSelector } from "./store/slices/authSlice";
 import { useAppDispatch } from "./store/store";
+import PublicRoutes from "./router/public.routes";
+import ProtectedRoutes from "./router/protected.routes";
+import ShopPage from "./components/pages/ShopPage";
 
 const drawerWidth = 240;
 
@@ -59,19 +62,32 @@ export default function App() {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       {/* Header */}
-      {authReducer.isAuthented && <Header open={open} handleDrawerOpen={handleDrawerOpen} />}
+      {authReducer.isAuthented && (
+        <Header open={open} handleDrawerOpen={handleDrawerOpen} />
+      )}
       {/* Menu */}
-      {authReducer.isAuthented  && <Menu open={open} handleDrawerClose={handleDrawerClose} />}
+      {authReducer.isAuthented && (
+        <Menu open={open} handleDrawerClose={handleDrawerClose} />
+      )}
       {/* Body */}
       <Main open={open}>
         <DrawerHeader />
         {/* Page */}
         <Routes>
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} /> 
-          <Route path="/stock" element={<StockPage />} />
-          <Route path="*" element={<Navigate to="/login" />} />
+          {/* Public Route */}
+          <Route path="/" element={<PublicRoutes isAuthented={authReducer.isAuthented} />}>
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/stock" element={<StockPage />} />
+            <Route path="*" element={<Navigate to="/login" />} />
+          </Route>
+
+           {/* Secure Route */}
+           <Route path="/" element={<ProtectedRoutes isAuthented={authReducer.isAuthented} />}>            
+            <Route path="/stock" element={<StockPage />} />            
+            <Route path="/shop" element={<ShopPage />} />
+          </Route>
         </Routes>
       </Main>
     </Box>
