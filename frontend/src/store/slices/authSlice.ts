@@ -5,7 +5,7 @@ interface InitialStateProp {
     count:number
 }
 
-const initialState:InitialStateProp = {count:0}
+const initialState:InitialStateProp = {count:10}
 
 const authSlice = createSlice({
     name:"authSlice",

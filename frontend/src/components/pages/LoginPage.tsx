@@ -6,6 +6,8 @@ import { Controller, useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 const formValidateSchema = Yup.object().shape({
   username: Yup.string()
@@ -16,6 +18,7 @@ const formValidateSchema = Yup.object().shape({
 
 export default function LoginPage() {
   const initialValue: User = { username: "admin", password: "1234" };
+  const authReducer = useSelector((state:RootState)=>state.authReducer)
 
   const {
     control,
@@ -37,7 +40,7 @@ export default function LoginPage() {
 
   return (
     <Box>
-      <Typography variant="h2">Login</Typography>
+      <Typography variant="h2">Login {authReducer.count}</Typography>
       <form className="mt-5" onSubmit={handleSubmit(doSubmit)}>
         <Stack direction={"column"} spacing={3}>
           {/* Username */}
