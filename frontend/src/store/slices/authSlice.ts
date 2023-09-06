@@ -41,7 +41,10 @@ const authSlice = createSlice({
         },
         remove:(state)=>{
             state.count--
-        },        
+        },
+        logout:()=>{
+            localStorage.clear()
+        }        
     },
     extraReducers:(builder)=>{
         builder.addCase(addWithDelay.fulfilled, (state, action)=>{
@@ -55,5 +58,5 @@ const authSlice = createSlice({
 })
 
 export default authSlice.reducer
-export const {add, remove} = authSlice.actions
+export const {add, remove, logout} = authSlice.actions
 export const authSelector = (state:RootState)=>state.authReducer
