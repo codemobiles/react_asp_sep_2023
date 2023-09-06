@@ -8,7 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "@/store/store";
-import { authSelector } from "@/store/slices/authSlice";
+import { add, authSelector, remove } from "@/store/slices/authSlice";
 
 const formValidateSchema = Yup.object().shape({
   username: Yup.string()
