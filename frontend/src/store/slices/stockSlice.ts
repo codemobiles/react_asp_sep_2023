@@ -24,7 +24,7 @@ const stockSlice = createSlice({
     reducers:{},
     extraReducers: (builder)=>{
         builder.addCase(getProducts.fulfilled, (state, action)=>{
-            
+            state.stockAllResult = action.payload
         })
     }
 })
