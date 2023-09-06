@@ -41,9 +41,9 @@ export default function LoginPage() {
   });
 
   const doSubmit = async (user: User) => {
-    const result = await dispatch(login(user))
+    const result = await dispatch(login(user))    
     if (login.fulfilled.match(result)) {
-      navigate("stock")
+      navigate("/stock")
     }else{
       alert("Login failed")
     }
