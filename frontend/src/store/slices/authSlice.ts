@@ -68,7 +68,8 @@ const authSlice = createSlice({
     remove: (state) => {
       state.count--;
     },
-    logout: () => {
+    logout: (state) => {
+      state.isAuthented = false
       localStorage.clear();
     },
     relogin: (state) => {

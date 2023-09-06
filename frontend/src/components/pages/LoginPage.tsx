@@ -33,7 +33,7 @@ const Login = () => {
     canelBtn: { marginTop: 2 },
   };
 
-  const initialValue: User = { username: "admin", password: "1234" };
+  const initialValue: User = { username: "admin", password: "12341234" };
   const {
     control,
     handleSubmit,
