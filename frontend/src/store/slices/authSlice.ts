@@ -29,10 +29,11 @@ const authSlice = createSlice({
         },
         remove:(state)=>{
             state.count--
-        },
-        
+        },        
     },
-
+    extraReducers:(builder)=>{
+        
+    }
 })
 
 export default authSlice.reducer
