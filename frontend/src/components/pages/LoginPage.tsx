@@ -8,7 +8,13 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "@/store/store";
-import { add, addWithDelay, authSelector, remove, removeWithDelay } from "@/store/slices/authSlice";
+import {
+  add,
+  addWithDelay,
+  authSelector,
+  remove,
+  removeWithDelay,
+} from "@/store/slices/authSlice";
 
 const formValidateSchema = Yup.object().shape({
   username: Yup.string()
@@ -82,23 +88,29 @@ export default function LoginPage() {
           <Button variant="text">Don't have an account?</Button>
           {/* Redux Counter */}
           <Stack direction="row" justifyContent="space-around">
-            <Button variant="contained" onClick={()=>dispatch(remove())} >
+            <Button variant="contained" onClick={() => dispatch(remove())}>
               --
             </Button>
             <Typography variant="h2">{authReducer.count}</Typography>
-            <Button variant="contained"   onClick={()=>dispatch(add())}>
+            <Button variant="contained" onClick={() => dispatch(add())}>
               ++
             </Button>
           </Stack>
 
           {/* Redux Counter with Delay */}
           <Stack direction="row" justifyContent="space-around">
-            <Button variant="contained"  onClick={()=>dispatch(removeWithDelay())} >
+            <Button
+              variant="contained"
+              onClick={() => dispatch(removeWithDelay())}
+            >
               delay(-)
             </Button>
             <Typography variant="h2">{authReducer.count}</Typography>
-            <Button variant="contained"   onClick={()=>dispatch(addWithDelay())}>
-            delay(+)
+            <Button
+              variant="contained"
+              onClick={() => dispatch(addWithDelay())}
+            >
+              delay(+)
             </Button>
           </Stack>
         </Stack>
