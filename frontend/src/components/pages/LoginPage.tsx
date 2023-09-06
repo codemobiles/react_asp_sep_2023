@@ -1,11 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import {
+  Alert,
+  Box,
+  Button,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { User } from "@/types/user.type";
 import { Controller, useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import {httpClient} from "@/utils/HttpClient";
+import { httpClient } from "@/utils/HttpClient";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "@/store/store";
 import {
@@ -41,11 +48,9 @@ export default function LoginPage() {
   });
 
   const doSubmit = async (user: User) => {
-    const result = await dispatch(login(user))    
+    const result = await dispatch(login(user));
     if (login.fulfilled.match(result)) {
-      navigate("/stock")
-    }else{
-      alert("Login failed")
+      navigate("/stock");
     }
   };
 
@@ -84,6 +89,13 @@ export default function LoginPage() {
               />
             )}
           />
+
+          {/* short if */}
+          {authReducer.isError && (
+            <Alert severity="error">
+              Login failed - please check your username and password
+            </Alert>
+          )}
 
           <Button variant="contained" type="submit">
             Login
