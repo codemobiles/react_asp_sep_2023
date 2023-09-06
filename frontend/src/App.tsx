@@ -51,9 +51,13 @@ export default function App() {
   const [open, setOpen] = React.useState(true);
 
   React.useEffect(()=>{
-    // Called when component is created
+    // Called when component is created or dependencies are changed
     dispatch(relogin())
-  });
+    
+    return ()=>{
+      // Called when component is destroyed
+    }
+  },[dispatch]);
 
 
   const handleDrawerOpen = () => {
@@ -89,8 +93,7 @@ export default function App() {
           <Route path="/" element={<PublicRoutes isAuthented={authReducer.isAuthented} />}>
             <Route path="/" element={<Navigate to="/login" />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/stock" element={<StockPage />} />
+            <Route path="/register" element={<RegisterPage />} />            
             <Route path="*" element={<Navigate to="/login" />} />
           </Route>
 
