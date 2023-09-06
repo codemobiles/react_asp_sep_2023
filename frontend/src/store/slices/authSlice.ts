@@ -37,7 +37,9 @@ const authSlice = createSlice({
         },        
     },
     extraReducers:(builder)=>{
-        builder.addCase()
+        builder.addCase(addWithDelay.fulfilled, (state, action)=>{
+            state.count = action.payload
+        })
     }
 })
 
