@@ -11,7 +11,15 @@ const initialState:InitialStateProp = {count:0}
 const authSlice = createSlice({
     name:"authSlice",
     initialState,
-    reducers:{},
+    reducers:{
+        add:(state)=>{
+            state.count++
+        },
+        remove:(state)=>{
+            state.count--
+        },
+        
+    },
 
 })
 
