@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../store";
+import { getStore, RootState } from "../store";
 import { LoginResult, RegisterResult } from "@/types/auth-result.type";
 
 
@@ -19,6 +19,11 @@ export interface AuthState {
     count:0
   };
 
+  const addWithDelay = ()=>{
+    // get result from server (delay 10 secs)
+    return getStore().state.authReducer.count+1
+  }
+
 
 const authSlice = createSlice({
     name:"authSlice",
@@ -32,7 +37,7 @@ const authSlice = createSlice({
         },        
     },
     extraReducers:(builder)=>{
-        
+        builder.addCase()
     }
 })
 
