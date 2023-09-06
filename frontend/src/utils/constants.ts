@@ -16,9 +16,9 @@ export const apiUrl = "https://localhost:8081/api/v1";
 export const imageUrl = "http://localhost:8081";
 
 export const server = {
-  LOGIN_URL: `login`,
+  LOGIN_URL: `Auth/login`,
   REFRESH_TOKEN_URL: `refresh/token`,
-  REGISTER_URL: `register`,
+  REGISTER_URL: `Auth/register`,
   PRODUCT_URL: `product`,
   TRANSACTION_URL: `transaction`,
   REPORT_URL: `report`,

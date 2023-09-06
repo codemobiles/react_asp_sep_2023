@@ -12,6 +12,7 @@ import {
   add,
   addWithDelay,
   authSelector,
+  login,
   remove,
   removeWithDelay,
 } from "@/store/slices/authSlice";
@@ -38,9 +39,7 @@ export default function LoginPage() {
   });
 
   const doSubmit = async (user: User) => {
-    const result = await httpClient.post("/Auth/login",user);
-
-    alert(JSON.stringify(result.data));
+    dispatch(login(user))
   };
 
   return (
