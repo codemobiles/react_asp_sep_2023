@@ -25,7 +25,11 @@ export interface AuthState {
     return getStore().getState().authReducer.count + 1
   })
 
-  export const removeWithDelay = ()=>{}
+  export const removeWithDelay = async ()=>{
+    // get result from server (delay 1 secs)
+    await new Promise(resolve => setTimeout(resolve, 1000))    
+    return getStore().getState().authReducer.count - 1
+  }
 
 
 const authSlice = createSlice({
