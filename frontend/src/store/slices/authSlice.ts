@@ -25,11 +25,11 @@ export interface AuthState {
     return getStore().getState().authReducer.count + 1
   })
 
-  export const removeWithDelay = async ()=>{
+  export const removeWithDelay = createAsyncThunk("removeWithDelay", async ()=>{
     // get result from server (delay 1 secs)
     await new Promise(resolve => setTimeout(resolve, 1000))    
     return getStore().getState().authReducer.count - 1
-  }
+  })
 
 
 const authSlice = createSlice({
@@ -47,6 +47,8 @@ const authSlice = createSlice({
         builder.addCase(addWithDelay.fulfilled, (state, action)=>{
             state.count = action.payload
         })
+
+        builder.addCase(removeWithDelay.fu)
     }
 })
 
