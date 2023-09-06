@@ -1,12 +1,24 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
+import { LoginResult, RegisterResult } from "@/types/auth-result.type";
 
 
-interface InitialStateProp {
-    count:number
-}
+export interface AuthState {
+    loginResult?: LoginResult;
+    registerResult?: RegisterResult;
+    isAuthenticating: boolean;
+    isAuthented: boolean;
+    isError: boolean;
+    count: number;
+  }
+  
+  const initialState: AuthState = {
+    isAuthenticating: true,
+    isAuthented: false,
+    isError: false,
+    count:0
+  };
 
-const initialState:InitialStateProp = {count:0}
 
 const authSlice = createSlice({
     name:"authSlice",
