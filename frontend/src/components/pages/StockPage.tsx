@@ -1,9 +1,17 @@
 import React from 'react'
 
-type Props = {}
 
-export default function StockPage({}: Props) {
+
+export default function StockPage() {
+
+  const products = ["Angular", "VueJS", "Flutter"]
+
   return (
-    <div>StockPage</div>
+    <div>StockPage
+      <ul>
+        {products.map(p=><li>- {p}</li>)}        
+      </ul>
+
+    </div>
   )
 }
