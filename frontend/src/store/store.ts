@@ -3,15 +3,17 @@ import { useDispatch } from "react-redux";
 
 import authReducer from "@/store/slices/authSlice";
 
+let store: any = undefined;
 
-const store = configureStore({
-    reducer: {
-      authReducer,
-    },
-    devTools: import.meta.env.VITE_IS_PRODUCTION === "0", // show redux log in dev mode
-  });
-
-export function getStore() {  
+export function getStore() {
+  if (!store) {
+    store = configureStore({
+      reducer: {
+        authReducer,
+      },
+      devTools: import.meta.env.VITE_IS_PRODUCTION === "0", // show redux log in dev mode
+    });
+  }
   return store;
 }
 
