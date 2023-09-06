@@ -2,6 +2,7 @@ import { EnhancedStore, configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 
 import authReducer from "@/store/slices/authSlice";
+import stockReducer from "@/store/slices/stockSlice";
 
 // let store: any = undefined;
 let store: EnhancedStore;
@@ -11,6 +12,7 @@ export function getStore() {
     store = configureStore({
       reducer: {
         authReducer,
+        stockReducer
       },
       devTools: import.meta.env.VITE_IS_PRODUCTION === "0", // show redux log in dev mode
     });
