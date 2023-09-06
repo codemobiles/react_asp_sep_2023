@@ -5,6 +5,7 @@ import { User } from "@/types/user.type";
 import { Controller, useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "axios";
 
 const formValidateSchema = Yup.object().shape({
   username: Yup.string()
@@ -25,8 +26,13 @@ export default function LoginPage() {
     resolver: yupResolver(formValidateSchema),
   });
 
-  const doSubmit = (user: User) => {
-    alert(JSON.stringify(user));
+  const doSubmit = async (user: User) => {
+    const result = await axios.post(
+      "https://localhost:8081/api/Auth/login",
+      user
+    );
+
+    alert(JSON.stringify(result.data));
   };
 
   return (
