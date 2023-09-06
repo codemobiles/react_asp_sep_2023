@@ -5,6 +5,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import { authSelector } from "@/store/slices/authSlice";
+import { useSelector } from "react-redux";
 
 const drawerWidth = 240;
 
@@ -35,6 +37,8 @@ type HeaderProps = {
 };
 
 export default function Header({ open, handleDrawerOpen }: HeaderProps) {
+  const authReducer = useSelector(authSelector)
+  
   return (
     <AppBar position="fixed" open={open}>
       <Toolbar>
@@ -48,7 +52,7 @@ export default function Header({ open, handleDrawerOpen }: HeaderProps) {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap component="div">
-          Persistent drawer
+          Persistent drawer {authReducer.count}
         </Typography>
       </Toolbar>
     </AppBar>
