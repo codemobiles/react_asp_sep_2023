@@ -9,7 +9,7 @@ import LoginPage from "./components/pages/LoginPage";
 import RegisterPage from "./components/pages/RegisterPage";
 import StockPage from "./components/pages/StockPage";
 import { useSelector } from "react-redux";
-import { authSelector } from "./store/slices/authSlice";
+import { authSelector, relogin } from "./store/slices/authSlice";
 import { useAppDispatch } from "./store/store";
 import PublicRoutes from "./router/public.routes";
 import ProtectedRoutes from "./router/protected.routes";
@@ -63,6 +63,10 @@ export default function App() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  if (authReducer.isAuthenticating){
+    return <Box>Loading...</Box>
+  }
 
   return (
     <Box sx={{ display: "flex" }}>
