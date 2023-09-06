@@ -22,8 +22,11 @@ export interface AuthState {
   export const addWithDelay = createAsyncThunk("addWithDelay", async ()=>{
     // get result from server (delay 1 secs)
     await new Promise(resolve => setTimeout(resolve, 1000))
+    
     return 1
   })
+
+  export const removeWithDelay = ()=>{}
 
 
 const authSlice = createSlice({
