@@ -42,7 +42,7 @@ export default function LoginPage() {
 
   return (
     <Box>
-      <Typography variant="h2">Login {authReducer.count}</Typography>
+      <Typography variant="h2">Login</Typography>
       <form className="mt-5" onSubmit={handleSubmit(doSubmit)}>
         <Stack direction={"column"} spacing={3}>
           {/* Username */}
@@ -80,6 +80,15 @@ export default function LoginPage() {
             Login
           </Button>
           <Button variant="text">Don't have an account?</Button>
+          <Stack direction="row" justifyContent="space-around">
+          <Button variant="contained" type="submit">
+            --
+          </Button>
+            <Typography variant="h2">{authReducer.count}</Typography>
+          <Button variant="contained" type="submit">
+            ++
+          </Button>
+          </Stack>
         </Stack>
       </form>
     </Box>
