@@ -81,12 +81,20 @@ const authSlice = createSlice({
       state.count = action.payload;
     });
 
+    // login successful
     builder.addCase(login.fulfilled, (state, action) => {
       state.isAuthented = true;
       state.isError = false;
       state.loginResult = action.payload;
       state.isAuthenticating = false;
     });
+
+    // login failed
+    builder.addCase(login.rejected, (state) => {
+        state.isAuthented = false;
+        state.isError = true;        
+        state.isAuthenticating = false;
+      });
   },
 });
 
