@@ -64,6 +64,7 @@ export default function App() {
     setOpen(false);
   };
 
+  // Check if still loading
   if (authReducer.isAuthenticating){
     return <Box>Loading...</Box>
   }
