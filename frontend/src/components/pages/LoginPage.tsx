@@ -5,7 +5,7 @@ import { User } from "@/types/user.type";
 import { Controller, useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import axios from "axios";
+import {httpClient} from "@/utils/HttpClient";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "@/store/store";
 import {
@@ -38,10 +38,7 @@ export default function LoginPage() {
   });
 
   const doSubmit = async (user: User) => {
-    const result = await axios.post(
-      "https://localhost:8081/api/Auth/login",
-      user
-    );
+    const result = await httpClient.post("/Auth/login",user);
 
     alert(JSON.stringify(result.data));
   };
