@@ -8,6 +8,9 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import LoginPage from "./components/pages/LoginPage";
 import RegisterPage from "./components/pages/RegisterPage";
 import StockPage from "./components/pages/StockPage";
+import { useSelector } from "react-redux";
+import { authSelector } from "./store/slices/authSlice";
+import { useAppDispatch } from "./store/store";
 
 const drawerWidth = 240;
 
@@ -40,7 +43,9 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 export default function App() {
-  const [open, setOpen] = React.useState(false);
+  const authReducer = useSelector(authSelector);
+  const dispatch = useAppDispatch();
+  const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -54,9 +59,9 @@ export default function App() {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       {/* Header */}
-      <Header open={open} handleDrawerOpen={handleDrawerOpen} />
+      {authReducer.isAuthented && <Header open={open} handleDrawerOpen={handleDrawerOpen} />}
       {/* Menu */}
-      <Menu open={open} handleDrawerClose={handleDrawerClose} />
+      {authReducer.isAuthented  && <Menu open={open} handleDrawerClose={handleDrawerClose} />}
       {/* Body */}
       <Main open={open}>
         <DrawerHeader />
