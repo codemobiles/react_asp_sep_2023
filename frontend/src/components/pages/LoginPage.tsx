@@ -90,6 +90,17 @@ export default function LoginPage() {
               ++
             </Button>
           </Stack>
+
+          {/* Redux Counter with Delay */}
+          <Stack direction="row" justifyContent="space-around">
+            <Button variant="contained"  onClick={()=>dispatch(remove())} >
+              delay(-)
+            </Button>
+            <Typography variant="h2">{authReducer.count}</Typography>
+            <Button variant="contained"   onClick={()=>dispatch(add())}>
+            delay(+)
+            </Button>
+          </Stack>
         </Stack>
       </form>
     </Box>
