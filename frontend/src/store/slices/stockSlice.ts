@@ -21,7 +21,12 @@ export const getProducts = createAsyncThunk("stock/getProducts", async ()=>{
 const stockSlice = createSlice({
     name:"stockSlice",
     initialState,
-    reducers:{}
+    reducers:{},
+    extraReducers: (builder)=>{
+        builder.addCase(getProducts.fulfilled, (state, action)=>{
+            
+        })
+    }
 })
 
 export default stockSlice.reducer
