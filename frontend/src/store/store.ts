@@ -1,9 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { EnhancedStore, configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 
 import authReducer from "@/store/slices/authSlice";
 
-let store: any = undefined;
+// let store: any = undefined;
+let store: EnhancedStore;
 
 export function getStore() {
   if (!store) {
