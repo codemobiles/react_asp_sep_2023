@@ -1,10 +1,10 @@
 import loginBg from "@/assets/images/bg4.jpg";
-import { authSelector, login } from "@/store/slices/authSlice";
+import { add, authSelector, login, remove } from "@/store/slices/authSlice";
 import { useAppDispatch } from "@/store/store";
 import { User } from "@/types/user.type";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Icons from "@mui/icons-material/";
-import { Box, InputAdornment } from "@mui/material";
+import { Box, InputAdornment, Stack } from "@mui/material";
 import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -27,7 +27,7 @@ const Login = () => {
   const authReducer = useSelector(authSelector); // used to access state
   const navigate = useNavigate();
 
-  const classes: any = {
+  const classes = {
     root: { display: "flex", justifyContent: "center", alignItems: "center" },
     submitBtn: { marginTop: 4 },
     canelBtn: { marginTop: 2 },
@@ -106,20 +106,28 @@ const Login = () => {
 
         <Button sx={classes.submitBtn} type="submit" fullWidth variant="contained" color="primary">
           Login
-        </Button>
+        </Button>        
+        <Box className="h-3"/>
 
-        <Button
+        <Button        
           onClick={() => {
             navigate("/register");
           }}
           type="button"
           fullWidth
           variant="outlined"
-          className="border-dashed border-1 border-gray-300 mt-4"
+          className="border-dashed border-1 border-gray-300"
           color="primary"
         >
           Register
         </Button>
+
+        <Stack direction="row" justifyContent="center">
+          <Button onClick={()=>dispatch(remove())}>-</Button>
+          <Typography>{authReducer.count}</Typography>
+          <Button onClick={()=>dispatch(add())}>+</Button>
+
+        </Stack>
       </form>
     );
   };
