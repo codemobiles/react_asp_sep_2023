@@ -50,6 +50,12 @@ export default function App() {
   const dispatch = useAppDispatch();
   const [open, setOpen] = React.useState(true);
 
+  React.useEffect(()=>{
+    // Called when component is created
+    dispatch(relogin())
+  });
+
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
