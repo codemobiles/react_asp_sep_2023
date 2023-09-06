@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
 using backend.Models;
 using backend.Services;
+using backend.Controllers.v1.ViewModels;
 
 namespace backend.Controllers.v1
 {
@@ -53,7 +54,7 @@ namespace backend.Controllers.v1
         }
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] LoginViewModel viewmodel)
+        public IActionResult Register([FromBody] RegisterViewModel viewmodel)
         {
             var user = _autoMapper.Map<User>(viewmodel);
             _authRepository.Register(user);
