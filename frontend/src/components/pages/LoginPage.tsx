@@ -8,6 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { authSelector } from "@/store/slices/authSlice";
 
 const formValidateSchema = Yup.object().shape({
   username: Yup.string()
@@ -18,7 +19,7 @@ const formValidateSchema = Yup.object().shape({
 
 export default function LoginPage() {
   const initialValue: User = { username: "admin", password: "1234" };
-  const authReducer = useSelector((state:RootState)=>state.authReducer)
+  const authReducer = useSelector(authSelector)
 
   const {
     control,

@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 
 interface InitialStateProp {
     count:number
 }
 
-const initialState:InitialStateProp = {count:10}
+const initialState:InitialStateProp = {count:0}
 
 const authSlice = createSlice({
     name:"authSlice",
@@ -15,3 +16,4 @@ const authSlice = createSlice({
 })
 
 export default authSlice.reducer
+export const authSelector = (state:RootState)=>state.authReducer
