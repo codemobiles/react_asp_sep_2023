@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
 using backend.Models;
 using backend.Services;
-using backend.Controllers.v1.ViewModels;
 
 namespace backend.Controllers.v1
 {

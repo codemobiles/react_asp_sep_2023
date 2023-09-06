@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace backend.Controllers.v1.ViewModels
+namespace backend.ViewModels
 {
     public class RegisterViewModel
     {

@@ -1,5 +1,4 @@
 using AutoMapper;
-using backend.Controllers.v1.ViewModels;
 using backend.Models;
 using backend.ViewModels;
 
