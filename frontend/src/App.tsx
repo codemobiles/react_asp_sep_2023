@@ -7,6 +7,7 @@ import Menu from "./components/layouts/Menu";
 import { Navigate, Route, Routes } from "react-router-dom";
 import LoginPage from "./components/pages/LoginPage";
 import RegisterPage from "./components/pages/RegisterPage";
+import StockPage from "./components/pages/StockPage";
 
 const drawerWidth = 240;
 
@@ -64,6 +65,7 @@ export default function App() {
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/stock" element={<StockPage />} />
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </Main>
