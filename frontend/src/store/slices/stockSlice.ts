@@ -1,7 +1,7 @@
 import { Product } from "@/types/product.type";
 import { httpClient } from "@/utils/HttpClient";
 import { server } from "@/utils/constants";
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export interface StockState {
     stockAllResult: Product[];
@@ -13,10 +13,10 @@ export interface StockState {
     stockOneResult: null,
   };
 
-export const getProducts = async ()=>{
+export const getProducts = createAsyncThunk("stock/getProducts", async ()=>{
     const result = await httpClient.get<Product[]>(server.PRODUCT_URL)
     return result.data
-} 
+}) 
   
 const stockSlice = createSlice({
     name:"stockSlice",
