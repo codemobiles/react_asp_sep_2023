@@ -1,9 +1,15 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
+interface InitialStateProp {
+    count:number
+}
+
+const initialState:InitialStateProp = {count:0}
+
 const authSlice = createSlice({
     name:"authSlice",
-    initialState:{count:0},
+    initialState,
     reducers:{},
 
 })
