@@ -1,6 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getStore, RootState } from "../store";
 import { LoginResult, RegisterResult } from "@/types/auth-result.type";
+import { httpClient } from "@/utils/HttpClient";
+import { User } from "@/types/user.type";
+import { server } from "@/utils/constants";
 
 
 export interface AuthState {
@@ -31,6 +34,27 @@ export interface AuthState {
     return getStore().getState().authReducer.count - 1
   })
 
+
+export const login = createAsyncThunk("auth/login", async (value: User) => {
+    const result = await httpClient.post<LoginResult>(server.LOGIN_URL, value);
+    if (result.data.result === "ok") {
+      const { token } = result.data;
+      localStorage.setItem(server.TOKEN_KEY, token);
+      return result.data;
+    }
+    throw Error();
+  });
+  
+  export const register = createAsyncThunk("auth/register", async (value: User) => {
+    const result = await httpClient.post<RegisterResult>(server.REGISTER_URL, value);
+    if (result.data.result === "ok") {
+      return result.data;
+    }
+  
+    throw Error();
+  });
+
+  
 
 const authSlice = createSlice({
     name:"authSlice",
