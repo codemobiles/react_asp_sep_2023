@@ -48,7 +48,9 @@ const authSlice = createSlice({
             state.count = action.payload
         })
 
-        builder.addCase(removeWithDelay.fu)
+        builder.addCase(removeWithDelay.fulfilled, (state, action)=>{
+            state.count = action.payload
+        })
     }
 })
 
