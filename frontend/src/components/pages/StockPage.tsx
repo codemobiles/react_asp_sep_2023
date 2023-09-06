@@ -1,15 +1,23 @@
-import React from 'react'
+import { getProducts, stockSelector } from '@/store/slices/stockSlice'
+import { useAppDispatch } from '@/store/store'
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 
 
 export default function StockPage() {
+  const dispatch = useAppDispatch()
+  const stockReducer = useSelector(stockSelector)
 
-  const products = ["Angular", "VueJS", "Flutter"]
+  useEffect(()=>{
+    dispatch(getProducts())
+  },[dispatch])
+
 
   return (
     <div>StockPage
       <ul>
-        {products.map(p=><li>- {p}</li>)}        
+        {stockReducer.stockAllResult.map(p=><li>- {p.name}</li>)}        
       </ul>
 
     </div>
