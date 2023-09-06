@@ -16,6 +16,7 @@ import {
   remove,
   removeWithDelay,
 } from "@/store/slices/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const formValidateSchema = Yup.object().shape({
   username: Yup.string()
@@ -28,6 +29,7 @@ export default function LoginPage() {
   const initialValue: User = { username: "admin", password: "12341234" };
   const authReducer = useSelector(authSelector);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const {
     control,
@@ -39,7 +41,12 @@ export default function LoginPage() {
   });
 
   const doSubmit = async (user: User) => {
-    dispatch(login(user))
+    const result = await dispatch(login(user))
+    if (login.fulfilled.match(result)) {
+      navigate("stock")
+    }else{
+      alert("Login failed")
+    }
   };
 
   return (

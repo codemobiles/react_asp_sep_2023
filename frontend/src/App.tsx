@@ -64,7 +64,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/register" element={<RegisterPage />} /> 
           <Route path="/stock" element={<StockPage />} />
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
