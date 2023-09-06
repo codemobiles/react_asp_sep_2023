@@ -19,10 +19,10 @@ export interface AuthState {
     count:0
   };
 
-  const addWithDelay = ()=>{
+  const addWithDelay = createAsyncThunk("addWithDelay", ()=>{
     // get result from server (delay 10 secs)
     return getStore().state.authReducer.count+1
-  }
+  })
 
 
 const authSlice = createSlice({
