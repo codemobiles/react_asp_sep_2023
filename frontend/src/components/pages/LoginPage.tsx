@@ -24,7 +24,7 @@ const formValidateSchema = Yup.object().shape({
 });
 
 export default function LoginPage() {
-  const initialValue: User = { username: "admin", password: "1234" };
+  const initialValue: User = { username: "admin", password: "12341234" };
   const authReducer = useSelector(authSelector);
   const dispatch = useAppDispatch();
 

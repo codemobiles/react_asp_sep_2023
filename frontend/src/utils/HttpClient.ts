@@ -11,6 +11,9 @@ axios.interceptors.request.use(async (config: any) => {
     config.url = join(apiUrl, config.url);
   }
 
+  // demo how to intercept
+  // await new Promise(resolve => setTimeout(resolve, 5000))    
+
   const userToken = localStorage.getItem(server.TOKEN_KEY);
   if (userToken) {
     config.headers = { Authorization: `Bearer ${userToken}` };
