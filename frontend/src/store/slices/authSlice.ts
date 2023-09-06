@@ -19,8 +19,9 @@ export interface AuthState {
     count:0
   };
 
-  const addWithDelay = createAsyncThunk("addWithDelay", ()=>{
-    // get result from server (delay 10 secs)
+  const addWithDelay = createAsyncThunk("addWithDelay", async ()=>{
+    // get result from server (delay 1 secs)
+    await new Promise(resolve => setTimeout(resolve, 1000))
     return getStore().state.authReducer.count+1
   })
 
