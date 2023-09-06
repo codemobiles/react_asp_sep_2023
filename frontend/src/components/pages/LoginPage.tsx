@@ -19,8 +19,8 @@ const formValidateSchema = Yup.object().shape({
 
 export default function LoginPage() {
   const initialValue: User = { username: "admin", password: "1234" };
-  const authReducer = useSelector(authSelector)
-  const dispatch = useAppDispatch()
+  const authReducer = useSelector(authSelector);
+  const dispatch = useAppDispatch();
 
   const {
     control,
@@ -80,14 +80,15 @@ export default function LoginPage() {
             Login
           </Button>
           <Button variant="text">Don't have an account?</Button>
+          {/* Redux Counter */}
           <Stack direction="row" justifyContent="space-around">
-          <Button variant="contained" type="submit">
-            --
-          </Button>
+            <Button variant="contained" type="submit">
+              --
+            </Button>
             <Typography variant="h2">{authReducer.count}</Typography>
-          <Button variant="contained" type="submit">
-            ++
-          </Button>
+            <Button variant="contained" type="submit">
+              ++
+            </Button>
           </Stack>
         </Stack>
       </form>
