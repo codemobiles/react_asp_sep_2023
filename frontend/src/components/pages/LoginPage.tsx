@@ -82,11 +82,11 @@ export default function LoginPage() {
           <Button variant="text">Don't have an account?</Button>
           {/* Redux Counter */}
           <Stack direction="row" justifyContent="space-around">
-            <Button variant="contained" type="submit">
+            <Button variant="contained" onClick={()=>dispatch(remove())} >
               --
             </Button>
             <Typography variant="h2">{authReducer.count}</Typography>
-            <Button variant="contained" type="submit">
+            <Button variant="contained"   onClick={()=>dispatch(add())}>
               ++
             </Button>
           </Stack>
