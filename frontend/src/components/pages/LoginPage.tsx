@@ -1,5 +1,5 @@
 import loginBg from "@/assets/images/bg4.jpg";
-import { add, authSelector, login, remove } from "@/store/slices/authSlice";
+import { add, addWithDelay, authSelector, login, remove, removeWithDelay } from "@/store/slices/authSlice";
 import { useAppDispatch } from "@/store/store";
 import { User } from "@/types/user.type";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -133,9 +133,9 @@ const Login = () => {
 
         {/* Demo counter */}
         <Stack direction="row" justifyContent="center">
-          <Button onClick={() => dispatch(remove())}>-</Button>
+          <Button onClick={() => dispatch(removeWithDelay())}>-</Button>
           <Typography>{authReducer.count}</Typography>
-          <Button onClick={() => dispatch(add())}>+</Button>
+          <Button onClick={() => dispatch(addWithDelay())}>+</Button>
         </Stack>
       </form>
     );

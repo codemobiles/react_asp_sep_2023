@@ -1,9 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../store";
+import store, { RootState } from "../store";
 import { LoginResult, RegisterResult } from "@/types/auth-result.type";
 import { httpClient } from "@/utils/HttpClient";
 import { User } from "@/types/user.type";
 import { server } from "@/utils/constants";
+import { useSelector } from "react-redux";
 
 export interface AuthState {
   loginResult?: LoginResult;
@@ -24,8 +25,11 @@ const initialState: AuthState = {
 export const addWithDelay = createAsyncThunk("addWithDelay", async () => {
   // get result from server (delay 1 secs)
   await new Promise((resolve) => setTimeout(resolve, 1000));
-  const store = () => import("@/store/store");          
-  return (await store()).default.getState().authReducer.count + 1;
+
+  // return store.getState().authReducer.count + 1;  
+  const store = ()=>import("@/store/store")
+  return (await store()).default.getState().authReducer.count + 1
+  
 });
 
 export const removeWithDelay = createAsyncThunk("removeWithDelay", async () => {
