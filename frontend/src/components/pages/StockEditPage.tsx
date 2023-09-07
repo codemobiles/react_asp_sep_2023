@@ -5,7 +5,11 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
 import { Link, useMatch, useNavigate } from "react-router-dom";
-import { addProduct, getProductById } from "@/store/slices/stockSlice";
+import {
+  addProduct,
+  getProductById,
+  stockSelector,
+} from "@/store/slices/stockSlice";
 import { useAppDispatch } from "@/store/store";
 import { Product } from "@/types/product.type";
 
@@ -13,6 +17,7 @@ import { useForm, Controller } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const formValidateSchema = Yup.object().shape({
   name: Yup.string().required("Name is required").trim(),
@@ -23,6 +28,7 @@ const formValidateSchema = Yup.object().shape({
 const StockEdit = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const stockReducer = useSelector(stockSelector);
   const match = useMatch("/stock/edit/:id");
 
   useEffect(() => {
@@ -49,12 +55,17 @@ const StockEdit = () => {
     handleSubmit,
     setValue,
     watch,
+    reset,
     formState: { errors },
   } = useForm<Product>({
     defaultValues: initialValue,
     //@ts-ignore
     resolver: yupResolver(formValidateSchema),
   });
+
+  useEffect(() => {
+    reset(stockReducer.stockOneResult ?? initialValue);
+  }, [stockReducer.stockOneResult, reset, initialValue]);
 
   const watchPreviewImage = watch("file_obj");
 
