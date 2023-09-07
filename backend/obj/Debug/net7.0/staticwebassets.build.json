@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kUEswIXsLuC2b234CVUi4r6WJMTl2q7oYjJO43pvbzI=",
+  "Hash": "3Jm6Dn93ybuDghx1fqaKQKT1h3wx3zsMlr1ErbZ3XFQ=",
   "Source": "backend",
   "BasePath": "_content/backend",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/.DS_Store"
+    },
+    {
+      "Identity": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/a2669e0c-0cbf-4f8e-8198-270dd6d7c8e4.jpg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "images/a2669e0c-0cbf-4f8e-8198-270dd6d7c8e4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/a2669e0c-0cbf-4f8e-8198-270dd6d7c8e4.jpg"
+    },
+    {
+      "Identity": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/d60fd7d7-8ee1-45d7-897b-987d2c7a5324.jpg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "images/d60fd7d7-8ee1-45d7-897b-987d2c7a5324.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/d60fd7d7-8ee1-45d7-897b-987d2c7a5324.jpg"
     },
     {
       "Identity": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_01.jpg",

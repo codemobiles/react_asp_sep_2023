@@ -128,5 +128,13 @@ namespace backend.Controllers.v1
         }
         //End
 
+
+        [HttpGet("search/name/")]
+        public IActionResult SearchProduct([FromQuery] string keyword)
+        {
+            var products = _productRepository.SearchProduct(keyword);
+            return Ok(products);
+        }
+
     }
 }
