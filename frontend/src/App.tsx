@@ -73,6 +73,7 @@ export default function App() {
   }
 
   const theme = createTheme({
+    spacing: 8,
     typography: {
       fontFamily: "Chakra Petch",
       // fontFamily: "Roboto",
