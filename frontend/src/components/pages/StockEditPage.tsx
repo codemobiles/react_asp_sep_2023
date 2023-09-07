@@ -26,8 +26,10 @@ const StockEdit = () => {
   const match = useMatch("/stock/edit/:id");
 
   useEffect(() => {
-    dispatch(getProductById(match?.params.id));
-  });
+    if (match && match!.params.id) {
+      dispatch(getProductById(match!.params.id));
+    }
+  }, [dispatch, match]);
 
   const onSubmit = async (values: Product) => {
     const formData = new FormData();
