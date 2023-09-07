@@ -35,7 +35,7 @@ const StockCreate = () => {
     }
   };
 
-  const initialValue: Product = { name: "", price: 1500, stock: 9999 };
+  const initialValue: Product = { name: "Productx", price: 1500, stock: 9999 };
   const {
     control,
     handleSubmit,
