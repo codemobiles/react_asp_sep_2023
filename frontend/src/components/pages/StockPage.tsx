@@ -12,12 +12,6 @@ const columns: GridColDef[] = [
   { field: "stock", headerName: "Stock", width: 130 },
 ];
 
-const rows = [
-  { id: 1, name: "Product1", price: 10, stock: 345 },
-  { id: 2, name: "Product2", price: 20, stock: 235 },
-  { id: 3, name: "Product3", price: 30, stock: 135 },
-];
-
 export default function StockPage() {
   const dispatch = useAppDispatch();
   const stockReducer = useSelector(stockSelector);
@@ -29,7 +23,7 @@ export default function StockPage() {
   return (
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid
-        rows={rows}
+        rows={stockReducer.stockAllResult}
         columns={columns}
         initialState={{
           pagination: {
