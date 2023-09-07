@@ -1,0 +1,209 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/.DS_Store",
+      "PackagePath": "staticwebassets/images/.DS_Store"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_01.jpg",
+      "PackagePath": "staticwebassets/images/product_01.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_02.jpg",
+      "PackagePath": "staticwebassets/images/product_02.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_03.jpg",
+      "PackagePath": "staticwebassets/images/product_03.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_04.jpg",
+      "PackagePath": "staticwebassets/images/product_04.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_05.jpg",
+      "PackagePath": "staticwebassets/images/product_05.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_06.jpg",
+      "PackagePath": "staticwebassets/images/product_06.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_07.jpg",
+      "PackagePath": "staticwebassets/images/product_07.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_08.jpg",
+      "PackagePath": "staticwebassets/images/product_08.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_09.jpg",
+      "PackagePath": "staticwebassets/images/product_09.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_10.jpg",
+      "PackagePath": "staticwebassets/images/product_10.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_11.jpg",
+      "PackagePath": "staticwebassets/images/product_11.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_12.jpg",
+      "PackagePath": "staticwebassets/images/product_12.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_13.jpg",
+      "PackagePath": "staticwebassets/images/product_13.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_14.jpg",
+      "PackagePath": "staticwebassets/images/product_14.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_15.jpg",
+      "PackagePath": "staticwebassets/images/product_15.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_16.jpg",
+      "PackagePath": "staticwebassets/images/product_16.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_17.jpg",
+      "PackagePath": "staticwebassets/images/product_17.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_18.jpg",
+      "PackagePath": "staticwebassets/images/product_18.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_19.jpg",
+      "PackagePath": "staticwebassets/images/product_19.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_20.jpg",
+      "PackagePath": "staticwebassets/images/product_20.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_21.jpg",
+      "PackagePath": "staticwebassets/images/product_21.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_22.jpg",
+      "PackagePath": "staticwebassets/images/product_22.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_23.jpg",
+      "PackagePath": "staticwebassets/images/product_23.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_24.jpg",
+      "PackagePath": "staticwebassets/images/product_24.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_25.jpg",
+      "PackagePath": "staticwebassets/images/product_25.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_26.jpg",
+      "PackagePath": "staticwebassets/images/product_26.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_27.jpg",
+      "PackagePath": "staticwebassets/images/product_27.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_28.jpg",
+      "PackagePath": "staticwebassets/images/product_28.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_29.jpg",
+      "PackagePath": "staticwebassets/images/product_29.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_30.jpg",
+      "PackagePath": "staticwebassets/images/product_30.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_31.jpg",
+      "PackagePath": "staticwebassets/images/product_31.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_32.jpg",
+      "PackagePath": "staticwebassets/images/product_32.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_33.jpg",
+      "PackagePath": "staticwebassets/images/product_33.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_34.jpg",
+      "PackagePath": "staticwebassets/images/product_34.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_35.jpg",
+      "PackagePath": "staticwebassets/images/product_35.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_36.jpg",
+      "PackagePath": "staticwebassets/images/product_36.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_37.jpg",
+      "PackagePath": "staticwebassets/images/product_37.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_38.jpg",
+      "PackagePath": "staticwebassets/images/product_38.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_39.jpg",
+      "PackagePath": "staticwebassets/images/product_39.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_40.jpg",
+      "PackagePath": "staticwebassets/images/product_40.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_41.jpg",
+      "PackagePath": "staticwebassets/images/product_41.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_42.jpg",
+      "PackagePath": "staticwebassets/images/product_42.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_43.jpg",
+      "PackagePath": "staticwebassets/images/product_43.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_44.jpg",
+      "PackagePath": "staticwebassets/images/product_44.jpg"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_45.jpg",
+      "PackagePath": "staticwebassets/images/product_45.jpg"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.backend.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.backend.props",
+      "PackagePath": "build\\backend.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.backend.props",
+      "PackagePath": "buildMultiTargeting\\backend.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.backend.props",
+      "PackagePath": "buildTransitive\\backend.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

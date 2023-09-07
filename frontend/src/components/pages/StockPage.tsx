@@ -15,7 +15,7 @@ const columns: GridColDef[] = [
       return (
         <img
           alt=""
-          src="https://img.freepik.com/free-photo/isolated-happy-smiling-dog-white-background-portrait-4_1562-693.jpg"
+          src={"https://localhost:8081/images/" + value}
           className="w-[70px] h-[70px] rounded-[5%]"
         />
       );
