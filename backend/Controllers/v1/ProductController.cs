@@ -30,7 +30,8 @@ namespace backend.Controllers.v1
         [HttpGet("{id}")]
         public IActionResult GetProduct(string id)
         {
-            return Ok(new { id = id });
+            var product = _productRepository.GetProduct(int.Parse(id));
+            return Ok(product);
         }
 
     }
