@@ -288,8 +288,8 @@ const Stock = () => {
   const showMyDialog = () => {
     return (
       <Dialog
-        open={false}
-        onClose={handleClose}
+        open={openMyDialog}
+        onClose={() => setOpenMyDialog(false)}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
@@ -318,7 +318,7 @@ const Stock = () => {
       <Grid container className="mb-6" spacing={7}>
         <Grid item xs={12} lg={3} md={6}>
           <StockCard
-            button={<Button onClick={()=>{}}>Info</Button>}
+            button={<Button onClick={() => {}}>Info</Button>}
             icon={AddShoppingCart}
             title="TOTAL"
             subtitle="112 THB"
