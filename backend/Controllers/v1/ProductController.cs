@@ -2,6 +2,7 @@
 //using backend.Models;
 
 using backend.Database;
+using backend.Models;
 using backend.Services;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -51,6 +52,24 @@ namespace backend.Controllers.v1
                 return StatusCode(500, new { message = error });
             }
         }
+
+
+        [HttpPost]
+        public IActionResult AddProduct([FromForm] Product product, IFormFile file)
+        {
+            try
+            {
+                // var product = _mapper.Map<Products>(productViewModel);
+                _productRepository.AddProduct(product, file);
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                return StatusCode(500, new { message = error });
+            }
+        }
+
+
 
     }
 }
