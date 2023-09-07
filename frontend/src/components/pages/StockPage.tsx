@@ -289,6 +289,7 @@ const Stock = () => {
       <Grid container className="mb-6" spacing={7}>
         <Grid item xs={12} lg={3} md={6}>
           <StockCard
+            button={true}
             icon={AddShoppingCart}
             title="TOTAL"
             subtitle="112 THB"

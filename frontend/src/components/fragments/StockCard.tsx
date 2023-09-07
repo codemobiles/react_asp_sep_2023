@@ -1,8 +1,15 @@
+import { Button, Card, Grid, Typography } from "@mui/material";
 import React from "react";
 
-type Props = {};
+type Props = {
+  title: string;
+  subtitle: string;
+  color: string;
+  icon: any;
+  button?: any;
+};
 
-export default function StockCard({}: Props) {
+export default function StockCard(props: Props) {
   return (
     <Card>
       <Grid container className="min-h-[70px]">
@@ -13,6 +20,7 @@ export default function StockCard({}: Props) {
           <Typography variant="h6" color="textSecondary">
             {props.subtitle}
           </Typography>
+          {props.button && <Button>Info</Button>}
         </Grid>
 
         <Grid
