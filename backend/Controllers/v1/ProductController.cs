@@ -4,7 +4,7 @@
 using backend.Database;
 using backend.Models;
 using backend.Services;
-using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers.v1
@@ -70,6 +70,63 @@ namespace backend.Controllers.v1
         }
 
 
+        // Begin
+        [HttpPut]
+        public IActionResult EditProduct([FromForm] Product product, IFormFile? file)
+
+        {
+            try
+            {
+                var result = _productRepository.GetProduct((int)product.ProductId!);
+                if (result == null)
+                {
+                    return NotFound(new { message = "Product not found" });
+                }
+
+                result.Name = product.Name;
+                result.Price = product.Price;
+                result.Stock = product.Stock;
+
+
+                _productRepository.EditProduct(result, file);
+
+
+                return Ok(result);
+            }
+            catch (Exception error)
+            {
+
+                return StatusCode(500, new { message = error });
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteProduct(int id)
+        {
+            try
+            {
+                var product = _productRepository.GetProduct(id);
+                if (product == null)
+                {
+                    return NotFound(new { message = "Product not found" });
+                }
+                _productRepository.DeleteProduct(product);
+                return NoContent();
+            }
+            catch (Exception error)
+            {
+
+                return StatusCode(500, new { message = error });
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpGet("images/{name}")]
+        public IActionResult ProductImage(string name)
+        {
+            return File($"~/images/{name}", "image/jpg");
+        }
+        //End
 
     }
 }
