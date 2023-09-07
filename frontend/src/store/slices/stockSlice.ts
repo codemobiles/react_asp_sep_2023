@@ -16,7 +16,9 @@ const initialState: StockState = {
 
 export const deleteProduct = createAsyncThunk(
   "stock/deleteProduct",
-  (id: string) => {}
+  async (id: string) => {
+    await httpClient.delete(`${server.PRODUCT_URL}/${id}`);
+  }
 );
 
 export const getProducts = createAsyncThunk(
