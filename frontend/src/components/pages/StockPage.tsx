@@ -11,6 +11,8 @@ import { authSelector } from "@/store/slices/authSlice";
 import { getProducts, stockSelector } from "@/store/slices/stockSlice";
 import { Typography } from "@mui/material";
 import { NumericFormat } from "react-number-format";
+import dayjs from "dayjs";
+import "dayjs/locale/th";
 
 const columns: GridColDef[] = [
   { field: "productId", headerName: "Id", width: 70 },
@@ -62,7 +64,17 @@ const columns: GridColDef[] = [
       </Typography>
     ),
   },
-  { field: "created", headerName: "Created", width: 230 },
+  {
+    field: "created",
+    headerName: "Created",
+    width: 230,
+    renderCell: ({ value }: GridRenderCellParams) => (
+      <Typography variant="body1">
+        {/* 543 diff thai years */}
+        {dayjs(value).locale("th").add(543, "year").format("DD MMMM YYYY")}
+      </Typography>
+    ),
+  },
 ];
 
 export default function StockPage() {
