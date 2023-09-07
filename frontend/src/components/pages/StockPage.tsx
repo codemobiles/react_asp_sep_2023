@@ -289,7 +289,7 @@ const Stock = () => {
       <Grid container className="mb-6" spacing={7}>
         <Grid item xs={12} lg={3} md={6}>
           <StockCard
-            button={true}
+            button={<Button>Info</Button>}
             icon={AddShoppingCart}
             title="TOTAL"
             subtitle="112 THB"
@@ -299,6 +299,13 @@ const Stock = () => {
 
         <Grid item xs={12} lg={3} md={6}>
           <StockCard
+            button={
+              <img
+                className="w-10"
+                sizes="40"
+                src="https://www.thesprucepets.com/thmb/hxWjs7evF2hP1Fb1c1HAvRi_Rw0=/2765x0/filters:no_upscale():strip_icc()/chinese-dog-breeds-4797219-hero-2a1e9c5ed2c54d00aef75b05c5db399c.jpg"
+              />
+            }
             icon={NewReleases}
             title="EMPTY"
             subtitle="9 PCS."

@@ -20,7 +20,7 @@ export default function StockCard(props: Props) {
           <Typography variant="h6" color="textSecondary">
             {props.subtitle}
           </Typography>
-          {props.button && <Button>Info</Button>}
+          {props.button}
         </Grid>
 
         <Grid
