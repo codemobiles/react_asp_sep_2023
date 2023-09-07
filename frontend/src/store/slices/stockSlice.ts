@@ -47,6 +47,8 @@ const stockSlice = createSlice({
     builder.addCase(getProducts.fulfilled, (state, action) => {
       state.stockAllResult = action.payload;
     });
+
+    
   },
 });
 
