@@ -7,7 +7,15 @@ import { getProducts, stockSelector } from "@/store/slices/stockSlice";
 
 const columns: GridColDef[] = [
   { field: "productId", headerName: "Id", width: 70 },
-  { field: "name", headerName: "Name", width: 330 },
+  {
+    field: "image",
+    headerName: "Image",
+    width: 170,
+    renderCell({ value }) {
+      return <b>{value}</b>;
+    },
+  },
+  { field: "name", headerName: "Name", width: 430 },
   { field: "price", headerName: "Price", width: 130 },
   { field: "stock", headerName: "Stock", width: 130 },
 ];
