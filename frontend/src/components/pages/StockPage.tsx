@@ -3,7 +3,7 @@ import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import { useAppDispatch } from "@/store/store";
 import { useSelector } from "react-redux";
 import { authSelector } from "@/store/slices/authSlice";
-import { getProducts } from "@/store/slices/stockSlice";
+import { getProducts, stockSelector } from "@/store/slices/stockSlice";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "Id", width: 70 },
@@ -20,7 +20,7 @@ const rows = [
 
 export default function StockPage() {
   const dispatch = useAppDispatch();
-  const authReducer = useSelector(authSelector);
+  const stockReducer = useSelector(stockSelector);
 
   React.useEffect(() => {
     dispatch(getProducts());
