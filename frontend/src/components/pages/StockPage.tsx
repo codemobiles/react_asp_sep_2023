@@ -109,8 +109,8 @@ const Stock = () => {
 
   const [openDialog, setOpenDialog] = useState<boolean>(false);
   const [selectedProduct, setSelectedProduct] = useState<Product>();
-  const [value, setValue] = useDebounce("", 300);
-
+  const [value, setValue] = useDebounce("", 1000);
+  // const [value, setValue] = useState("");
   const [openMyDialog, setOpenMyDialog] = useState(false);
 
   useEffect(() => {
@@ -375,8 +375,9 @@ const Stock = () => {
         componentsProps={{
           toolbar: {
             onChange: (event: React.ChangeEvent<HTMLInputElement>) =>
-              // setValue(event?.target.value),
-              console.log(event.target.value),
+              setValue(event?.target.value),
+            // console.log(event.target.value),
+            // dispatch(getProducts(event.target.value)),
             clearSearch: () => setValue(""),
           },
         }}
