@@ -111,6 +111,8 @@ const Stock = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product>();
   const [value, setValue] = useDebounce("", 300);
 
+  const [openMyDialog, setOpenMyDialog] = useState(false);
+
   useEffect(() => {
     dispatch(getProducts(value));
   }, [dispatch, value]);
@@ -316,6 +318,7 @@ const Stock = () => {
       <Grid container className="mb-6" spacing={7}>
         <Grid item xs={12} lg={3} md={6}>
           <StockCard
+            button={<Button onClick={()=>{}}>Info</Button>}
             icon={AddShoppingCart}
             title="TOTAL"
             subtitle="112 THB"
