@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3Jm6Dn93ybuDghx1fqaKQKT1h3wx3zsMlr1ErbZ3XFQ=",
+  "Hash": "KRaXmKKketp7txSQ5pBZcDp1PF40dZrOcRQlHpswqQg=",
   "Source": "backend",
   "BasePath": "_content/backend",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "wwwroot/images/.DS_Store"
     },
     {
+      "Identity": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/4d1f7f28-9a49-4383-9f32-83c946aab052.jpg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "images/4d1f7f28-9a49-4383-9f32-83c946aab052.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/4d1f7f28-9a49-4383-9f32-83c946aab052.jpg"
+    },
+    {
       "Identity": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/a2669e0c-0cbf-4f8e-8198-270dd6d7c8e4.jpg",
       "SourceId": "backend",
       "SourceType": "Discovered",
@@ -83,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/d60fd7d7-8ee1-45d7-897b-987d2c7a5324.jpg"
+    },
+    {
+      "Identity": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/f873276e-87b9-41a0-899d-8065825bf8b8.jpg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "images/f873276e-87b9-41a0-899d-8065825bf8b8.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/f873276e-87b9-41a0-899d-8065825bf8b8.jpg"
     },
     {
       "Identity": "/Users/chaiyasittayabovorn/Desktop/tmp/react_asp_sep_2023/backend/wwwroot/images/product_01.jpg",
