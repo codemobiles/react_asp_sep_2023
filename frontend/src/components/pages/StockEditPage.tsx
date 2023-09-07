@@ -1,23 +1,26 @@
-import { Box, Button, TextField } from "@mui/material";
+import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Link, useMatch, useNavigate } from "react-router-dom";
 import {
-  addProduct,
+  editProduct,
   getProductById,
   stockSelector,
 } from "@/store/slices/stockSlice";
 import { useAppDispatch } from "@/store/store";
 import { Product } from "@/types/product.type";
+import { imageUrl } from "@/utils/constants";
 
 import { useForm, Controller } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { Box, TextField } from "@mui/material";
+
+const initialValue: Product = { name: "", price: 0, stock: 0 };
 
 const formValidateSchema = Yup.object().shape({
   name: Yup.string().required("Name is required").trim(),
@@ -26,36 +29,24 @@ const formValidateSchema = Yup.object().shape({
 });
 
 const StockEdit = () => {
+  const match = useMatch("/stock/edit/:id");
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const stockReducer = useSelector(stockSelector);
-  const match = useMatch("/stock/edit/:id");
 
   useEffect(() => {
-    if (match && match!.params.id) {
-      dispatch(getProductById(match!.params.id));
+    if (match?.params.id) {
+      dispatch(getProductById(match?.params.id));
     }
-  }, [dispatch, match]);
+  }, [dispatch, match?.params.id]);
 
-  const onSubmit = async (values: Product) => {
-    const formData = new FormData();
-    formData.append("name", values.name);
-    formData.append("price", String(values.price));
-    formData.append("stock", String(values.stock));
-    formData.append("file", values.file);
-    const result = await dispatch(addProduct(formData));
-    if (addProduct.fulfilled.match(result)) {
-      navigate("/stock");
-    }
-  };
-
-  const initialValue: Product = { name: "Productx", price: 1500, stock: 9999 };
   const {
     control,
     handleSubmit,
+    getValues,
     setValue,
-    watch,
     reset,
+    watch,
     formState: { errors },
   } = useForm<Product>({
     defaultValues: initialValue,
@@ -69,35 +60,51 @@ const StockEdit = () => {
 
   const watchPreviewImage = watch("file_obj");
 
+  const onSubmit = async (values: Product) => {
+    const formData = new FormData();
+    formData.append("productId", String(values.productId));
+    formData.append("name", values.name);
+    formData.append("price", String(values.price));
+    formData.append("stock", String(values.stock));
+    if (values.file) {
+      formData.append("file", values.file);
+    }
+
+    dispatch(editProduct(formData)).then((result: any) => {
+      if (editProduct.fulfilled.match(result)) {
+        navigate("/stock");
+      }
+    });
+  };
+
   const showForm = () => {
     return (
       <form noValidate onSubmit={handleSubmit(onSubmit)}>
-        <Card elevation={5}>
+        <Card>
           <CardContent className="p-8">
             <Typography gutterBottom variant="h3">
               Edit Product
             </Typography>
 
-            {/* Name */}
             <Controller
-              control={control}
               name="name"
+              control={control}
               render={({ field }) => {
                 return (
                   <TextField
                     {...field}
                     label="Name"
-                    type="text"
                     error={Boolean(errors.name?.message)}
                     helperText={errors.name?.message?.toString()}
                     variant="outlined"
                     margin="normal"
+                    required
                     fullWidth
                     autoFocus
                   />
                 );
               }}
-            />
+            ></Controller>
 
             <Controller
               name="price"
@@ -107,17 +114,18 @@ const StockEdit = () => {
                   <TextField
                     {...field}
                     label="Price"
-                    type="number"
                     error={Boolean(errors.price?.message)}
                     helperText={errors.price?.message?.toString()}
                     variant="outlined"
                     margin="normal"
+                    required
+                    type="number"
                     fullWidth
                     autoFocus
                   />
                 );
               }}
-            />
+            ></Controller>
 
             <Controller
               name="stock"
@@ -126,20 +134,19 @@ const StockEdit = () => {
                 return (
                   <TextField
                     {...field}
-                    type="number"
                     label="Stock"
                     error={Boolean(errors.stock?.message)}
                     helperText={errors.stock?.message?.toString()}
                     variant="outlined"
                     margin="normal"
+                    required
+                    type="number"
                     fullWidth
                     autoFocus
                   />
                 );
               }}
-            />
-
-            <Box>{showPreviewImage()}</Box>
+            ></Controller>
 
             <TextField
               className="mt-4"
@@ -151,6 +158,7 @@ const StockEdit = () => {
                 setValue("file_obj", URL.createObjectURL(e.target.files[0])); // for preview image
               }}
             />
+            <Box>{showPreviewImage(getValues("image"))}</Box>
           </CardContent>
           <CardActions>
             <Button
@@ -160,7 +168,7 @@ const StockEdit = () => {
               type="submit"
               className="mr-2"
             >
-              Create
+              Edit
             </Button>
             <Button
               fullWidth
@@ -177,9 +185,13 @@ const StockEdit = () => {
     );
   };
 
-  const showPreviewImage = () => {
+  const showPreviewImage = (image: string | undefined) => {
     if (watchPreviewImage) {
       return <img alt="" src={watchPreviewImage} className="h-[100px]" />;
+    } else if (image) {
+      return (
+        <img alt="" src={`${imageUrl}/images/${image}`} className="h-[100px]" />
+      );
     }
   };
 
