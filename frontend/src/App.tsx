@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
+import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Header from "./components/layouts/Header";
@@ -50,15 +50,14 @@ export default function App() {
   const dispatch = useAppDispatch();
   const [open, setOpen] = React.useState(true);
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     // Called when component is created or dependencies are changed
-    dispatch(relogin())
-    
-    return ()=>{
-      // Called when component is destroyed
-    }
-  },[dispatch]);
+    dispatch(relogin());
 
+    return () => {
+      // Called when component is destroyed
+    };
+  }, [dispatch]);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -69,41 +68,62 @@ export default function App() {
   };
 
   // Check if still loading
-  if (authReducer.isAuthenticating){
-    return <Box>Loading...</Box>
+  if (authReducer.isAuthenticating) {
+    return <Box>Loading...</Box>;
   }
 
-  return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      {/* Header */}
-      {authReducer.isAuthented && (
-        <Header open={open} handleDrawerOpen={handleDrawerOpen} />
-      )}
-      {/* Menu */}
-      {authReducer.isAuthented && (
-        <Menu open={open} handleDrawerClose={handleDrawerClose} />
-      )}
-      {/* Body */}
-      <Main open={open}>
-        <DrawerHeader />
-        {/* Page */}
-        <Routes>
-          {/* Public Route */}
-          <Route path="/" element={<PublicRoutes isAuthented={authReducer.isAuthented} />}>
-            <Route path="/" element={<Navigate to="/login" />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />            
-            <Route path="*" element={<Navigate to="/login" />} />
-          </Route>
+  const theme = createTheme({
+    typography: {
+      fontFamily: "Chakra Petch",
+      // fontFamily: "Roboto",
+      fontWeightLight: 100,
+      fontWeightRegular: 400,
+      fontWeightMedium: 500,
+      fontWeightBold: 600,
+    },
+  });
 
-           {/* Secure Route */}
-           <Route path="/" element={<ProtectedRoutes isAuthented={authReducer.isAuthented} />}>            
-            <Route path="/stock" element={<StockPage />} />            
-            <Route path="/shop" element={<ShopPage />} />
-          </Route>
-        </Routes>
-      </Main>
-    </Box>
+  return (
+    <ThemeProvider theme={theme}>
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        {/* Header */}
+        {authReducer.isAuthented && (
+          <Header open={open} handleDrawerOpen={handleDrawerOpen} />
+        )}
+        {/* Menu */}
+        {authReducer.isAuthented && (
+          <Menu open={open} handleDrawerClose={handleDrawerClose} />
+        )}
+        {/* Body */}
+        <Main open={open}>
+          <DrawerHeader />
+          {/* Page */}
+          <Routes>
+            {/* Public Route */}
+            <Route
+              path="/"
+              element={<PublicRoutes isAuthented={authReducer.isAuthented} />}
+            >
+              <Route path="/" element={<Navigate to="/login" />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="*" element={<Navigate to="/login" />} />
+            </Route>
+
+            {/* Secure Route */}
+            <Route
+              path="/"
+              element={
+                <ProtectedRoutes isAuthented={authReducer.isAuthented} />
+              }
+            >
+              <Route path="/stock" element={<StockPage />} />
+              <Route path="/shop" element={<ShopPage />} />
+            </Route>
+          </Routes>
+        </Main>
+      </Box>
+    </ThemeProvider>
   );
 }
