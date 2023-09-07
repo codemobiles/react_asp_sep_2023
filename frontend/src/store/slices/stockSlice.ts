@@ -14,6 +14,8 @@ const initialState: StockState = {
   stockOneResult: null,
 };
 
+export const deleteProduct = (id: string) => {};
+
 export const getProducts = createAsyncThunk(
   "stock/getProducts",
   async (keyword: string) => {

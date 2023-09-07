@@ -1,4 +1,8 @@
-import { getProducts, stockSelector } from "@/store/slices/stockSlice";
+import {
+  deleteProduct,
+  getProducts,
+  stockSelector,
+} from "@/store/slices/stockSlice";
 import { useAppDispatch } from "@/store/store";
 import { Product } from "@/types/product.type";
 import { imageUrl } from "@/utils/constants";
