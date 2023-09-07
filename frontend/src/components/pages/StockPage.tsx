@@ -109,7 +109,7 @@ const Stock = () => {
 
   const [openDialog, setOpenDialog] = useState<boolean>(false);
   const [selectedProduct, setSelectedProduct] = useState<Product>();
-  const [value, setValue] = useDebounce("", 1000);
+  const [value, setValue] = useDebounce("", 300);
   // const [value, setValue] = useState("");
   const [openMyDialog, setOpenMyDialog] = useState(false);
 

@@ -39,6 +39,31 @@ export const getProducts = createAsyncThunk(
   }
 );
 
+// Add
+export const addProduct = createAsyncThunk(
+  "stock/add",
+  async (formData: FormData) => {
+    await httpClient.post(server.PRODUCT_URL, formData);
+  }
+);
+
+// Query by Id
+export const getProductById = createAsyncThunk(
+  "stock/getById",
+  async (id: string): Promise<Product> => {
+    const result = await await httpClient.get(`${server.PRODUCT_URL}/${id}`);
+    return result.data;
+  }
+);
+
+// Edit
+export const editProduct = createAsyncThunk(
+  "stock/edit",
+  async (formData: any) => {
+    await httpClient.put(server.PRODUCT_URL, formData);
+  }
+);
+
 const stockSlice = createSlice({
   name: "stockSlice",
   initialState,
@@ -47,8 +72,6 @@ const stockSlice = createSlice({
     builder.addCase(getProducts.fulfilled, (state, action) => {
       state.stockAllResult = action.payload;
     });
-
-    
   },
 });
 
