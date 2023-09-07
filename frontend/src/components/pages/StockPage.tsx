@@ -12,7 +12,13 @@ const columns: GridColDef[] = [
     headerName: "Image",
     width: 170,
     renderCell({ value }) {
-      return <b>{value}</b>;
+      return (
+        <img
+          alt=""
+          src="https://img.freepik.com/free-photo/isolated-happy-smiling-dog-white-background-portrait-4_1562-693.jpg"
+          className="w-[70px] h-[70px] rounded-[5%]"
+        />
+      );
     },
   },
   { field: "name", headerName: "Name", width: 430 },
