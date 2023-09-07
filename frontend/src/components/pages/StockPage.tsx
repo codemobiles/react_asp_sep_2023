@@ -375,7 +375,8 @@ const Stock = () => {
         componentsProps={{
           toolbar: {
             onChange: (event: React.ChangeEvent<HTMLInputElement>) =>
-              setValue(event?.target.value),
+              // setValue(event?.target.value),
+              console.log(event.target.value),
             clearSearch: () => setValue(""),
           },
         }}
