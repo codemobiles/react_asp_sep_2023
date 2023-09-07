@@ -26,7 +26,6 @@ export default function StockPage() {
           },
         }}
         pageSizeOptions={[5, 10]}
-        checkboxSelection
       />
     </div>
   );
