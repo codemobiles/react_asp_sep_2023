@@ -14,6 +14,7 @@ import { useAppDispatch } from "./store/store";
 import PublicRoutes from "./router/public.routes";
 import ProtectedRoutes from "./router/protected.routes";
 import ShopPage from "./components/pages/ShopPage";
+import { red } from "@mui/material/colors";
 
 const drawerWidth = 240;
 
@@ -73,6 +74,24 @@ export default function App() {
   }
 
   const theme = createTheme({
+    components: {
+      MuiIcon: {
+        styleOverrides: {
+          root: {
+            borderWidth: 1,
+            borderColor: "red",
+          },
+        },
+      },
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            borderRadius: 20,
+            backgroundColor: "red",
+          },
+        },
+      },
+    },
     spacing: 8,
     typography: {
       fontFamily: "Chakra Petch",
