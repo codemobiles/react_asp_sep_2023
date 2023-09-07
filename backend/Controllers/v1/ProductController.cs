@@ -3,6 +3,7 @@
 
 using backend.Database;
 using backend.Services;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers.v1
@@ -25,5 +26,12 @@ namespace backend.Controllers.v1
             var products = _productRepository.GetProducts();
             return Ok(products);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetProduct(string id)
+        {
+            return Ok(id);
+        }
+
     }
 }
