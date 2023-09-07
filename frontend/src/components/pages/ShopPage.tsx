@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 export default function ShopPage({}: Props) {
-  return (
-    <div>ShopPage</div>
-  )
+  return <div style={{ marginTop: 10 }}>ShopPage</div>;
 }
