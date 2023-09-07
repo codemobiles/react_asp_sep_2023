@@ -27,11 +27,29 @@ namespace backend.Controllers.v1
             return Ok(products);
         }
 
+        //   [HttpGet("{id}/{type}")]
+        // public IActionResult GetProduct(string id, string type)
+        // {
+        //     var product = _productRepository.GetProduct(int.Parse(id));
+        //     return Ok(new { product = product, type = type });
+        // }
+
         [HttpGet("{id}")]
-        public IActionResult GetProduct(string id)
+        public IActionResult GetProduct(int id)
         {
-            var product = _productRepository.GetProduct(int.Parse(id));
-            return Ok(product);
+            try
+            {
+                var result = _productRepository.GetProduct(id);
+                if (result == null)
+                {
+                    return NotFound(new { message = "Product not found" });
+                }
+                return Ok(result);
+            }
+            catch (Exception error)
+            {
+                return StatusCode(500, new { message = error });
+            }
         }
 
     }
