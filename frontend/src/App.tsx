@@ -1,21 +1,28 @@
-import * as React from "react";
-import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-import Header from "./components/layouts/Header";
-import Menu from "./components/layouts/Menu";
+
+import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
+import * as React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import LoginPage from "./components/pages/LoginPage";
-import RegisterPage from "./components/pages/RegisterPage";
-import StockPage from "./components/pages/StockPage";
-import { useSelector } from "react-redux";
-import { authSelector, relogin } from "./store/slices/authSlice";
-import { useAppDispatch } from "./store/store";
-import PublicRoutes from "./router/public.routes";
-import ProtectedRoutes from "./router/protected.routes";
-import ShopPage from "./components/pages/ShopPage";
-import { red } from "@mui/material/colors";
+
 import backgroundMenuImage from "@/assets/images/background_menu.jpg";
+import Header from "@/components/layouts/Header";
+import Menu from "@/components/layouts/Menu";
+import LoginPage from "@/components/pages/LoginPage";
+import RegisterPage from "@/components/pages/RegisterPage";
+import ReportPage from "@/components/pages/ReportPage";
+import ShopPage from "@/components/pages/ShopPage";
+import StockCreatePage from "@/components/pages/StockCreatePage";
+import StockEditPage from "@/components/pages/StockEditPage";
+import TransactionPage from "@/components/pages/TransactionPage";
+import ProtectedRoutes from "@/router/protected.routes";
+import PublicRoutes from "@/router/public.routes";
+import { authSelector, relogin } from "@/store/slices/authSlice";
+import { useAppDispatch } from "@/store/store";
+import { blue } from "@mui/material/colors";
+import { Container } from "@mui/system";
+import { useSelector } from "react-redux";
+import Box from "@mui/material/Box";
+import StockPage from "./components/pages/StockPage";
 const drawerWidth = 240;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
@@ -73,32 +80,24 @@ export default function App() {
     return <Box>Loading...</Box>;
   }
 
+  // https://mui.com/customization/default-theme/
   const theme = createTheme({
     components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            borderRadius: 30,
+          },
+        },
+      },
       MuiDrawer: {
         styleOverrides: {
           paper: {
             backgroundImage: `url(${backgroundMenuImage})`,
             backgroundRepeat: "no-repeat",
-            backgroundColor: "#ff00ff",
+            backgroundColor: "#f2fcff",
             backgroundPosition: "bottom",
             width: drawerWidth,
-          },
-        },
-      },
-      MuiIcon: {
-        styleOverrides: {
-          root: {
-            border: "2px solid red", // Replace 'red' with your desired border color
-            borderRadius: "50%", // If you want a circular border
-          },
-        },
-      },
-      MuiButton: {
-        styleOverrides: {
-          root: {
-            borderRadius: 20,
-            backgroundColor: "red",
           },
         },
       },
@@ -111,6 +110,13 @@ export default function App() {
       fontWeightRegular: 400,
       fontWeightMedium: 500,
       fontWeightBold: 600,
+    },
+    palette: {
+      primary:
+        import.meta.env.VITE_IS_PRODUCTION === "1" ? { main: "#0096d3" } : blue,
+      background: {
+        default: "#B8F4FF33",
+      },
     },
   });
 
@@ -128,31 +134,37 @@ export default function App() {
         )}
         {/* Body */}
         <Main open={open}>
-          <DrawerHeader />
-          {/* Page */}
-          <Routes>
-            {/* Public Route */}
-            <Route
-              path="/"
-              element={<PublicRoutes isAuthented={authReducer.isAuthented} />}
-            >
-              <Route path="/" element={<Navigate to="/login" />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/register" element={<RegisterPage />} />
-              <Route path="*" element={<Navigate to="/login" />} />
-            </Route>
-
-            {/* Secure Route */}
-            <Route
-              path="/"
-              element={
-                <ProtectedRoutes isAuthented={authReducer.isAuthented} />
-              }
-            >
-              <Route path="/stock" element={<StockPage />} />
-              <Route path="/shop" element={<ShopPage />} />
-            </Route>
-          </Routes>
+          <Container>
+            <DrawerHeader />
+            <Routes>
+              {/** Wrap all Route under PublicRoutes element */}
+              <Route
+                path="/"
+                element={<PublicRoutes isAuthented={authReducer.isAuthented} />}
+              >
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+                <Route path="/" element={<Navigate to="/login" />} />
+                <Route path="*" element={<Navigate to="/login" />} />
+              </Route>
+              {/* Protected routes */}
+              <Route
+                path="/"
+                element={
+                  <ProtectedRoutes isAuthented={authReducer.isAuthented} />
+                }
+              >
+                <Route path="/shop" element={<ShopPage />} />
+                <Route path="/stock" element={<StockPage />} />
+                <Route path="/report" element={<ReportPage />} />
+                <Route path="/stock/create" element={<StockCreatePage />} />
+                <Route path="/stock/edit/:id" element={<StockEditPage />} />
+                <Route path="/report" element={<ReportPage />} />
+                <Route path="/transaction" element={<TransactionPage />} />
+                {/* <Route path="/chartjs" element={<ChartJSFaker />} /> */}
+              </Route>
+            </Routes>
+          </Container>
         </Main>
       </Box>
     </ThemeProvider>

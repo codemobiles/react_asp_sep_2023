@@ -2,6 +2,6 @@ import React from "react";
 
 type Props = {};
 
-const TransactionPage = (props: Props) => {
+export default function TransactionPage({}: Props) {
   return <div>TransactionPage</div>;
-};
+}
