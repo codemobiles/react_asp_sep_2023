@@ -29,7 +29,23 @@ const columns: GridColDef[] = [
     },
   },
   { field: "name", headerName: "Name", width: 430 },
-  { field: "price", headerName: "Price", width: 130 },
+  {
+    headerName: "PRICE",
+    field: "price",
+    width: 120,
+    renderCell: ({ value }: GridRenderCellParams) => (
+      <Typography variant="body1">
+        <NumericFormat
+          value={value}
+          displayType={"text"}
+          thousandSeparator={true}
+          decimalScale={2}
+          fixedDecimalScale={true}
+          prefix={"฿"}
+        />
+      </Typography>
+    ),
+  },
   {
     field: "stock",
     headerName: "Stock",
