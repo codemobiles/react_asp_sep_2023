@@ -1,6 +1,7 @@
 import { Product } from "@/types/product.type";
 import { TransactionResponse } from "@/types/transaction.type";
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 export interface ShopState {
   transactionAllResult: TransactionResponse[];
@@ -26,9 +27,10 @@ const shopSlice = createSlice({
   reducers: {
     addOrder: () => {},
     removeOrder: () => {},
-    shopSelector: () => {},
     togglePayment: () => {},
   },
 });
 
 export default shopSlice.reducer;
+export const { addOrder, removeOrder, togglePayment } = shopSlice.actions;
+export const shopSelector = (state: RootState) => state.shopReducer;
