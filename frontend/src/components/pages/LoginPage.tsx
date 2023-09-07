@@ -18,7 +18,10 @@ import * as Yup from "yup";
 
 const formValidateSchema = Yup.object().shape({
   // username: Yup.string().email("Invalid email address").required("Email is required").trim(),
-  username: Yup.string().min(4).required("Username must be more than 3 letters").trim(),
+  username: Yup.string()
+    .min(4)
+    .required("Username must be more than 3 letters")
+    .trim(),
   password: Yup.string().required("Password is required").trim(),
 });
 
@@ -104,12 +107,18 @@ const Login = () => {
 
         {authReducer.isError && <Alert severity="error">Login failed</Alert>}
 
-        <Button sx={classes.submitBtn} type="submit" fullWidth variant="contained" color="primary">
+        <Button
+          sx={classes.submitBtn}
+          type="submit"
+          fullWidth
+          variant="contained"
+          color="primary"
+        >
           Login
-        </Button>        
-        <Box className="h-3"/>
+        </Button>
+        <Box className="h-3" />
 
-        <Button        
+        <Button
           onClick={() => {
             navigate("/register");
           }}
@@ -122,11 +131,11 @@ const Login = () => {
           Register
         </Button>
 
+        {/* Demo counter */}
         <Stack direction="row" justifyContent="center">
-          <Button onClick={()=>dispatch(remove())}>-</Button>
+          <Button onClick={() => dispatch(remove())}>-</Button>
           <Typography>{authReducer.count}</Typography>
-          <Button onClick={()=>dispatch(add())}>+</Button>
-
+          <Button onClick={() => dispatch(add())}>+</Button>
         </Stack>
       </form>
     );
