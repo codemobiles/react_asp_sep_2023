@@ -53,20 +53,22 @@ const StockCreate = () => {
   const showForm = () => {
     return (
       <form noValidate onSubmit={handleSubmit(onSubmit)}>
-        <Card>
+        <Card elevation={5}>
           <CardContent className="p-8">
             <Typography gutterBottom variant="h3">
               Create Product
             </Typography>
 
+            {/* Name */}
             <Controller
-              name="name"
               control={control}
+              name="name"
               render={({ field }) => {
                 return (
                   <TextField
                     {...field}
                     label="Name"
+                    type="text"
                     error={Boolean(errors.name?.message)}
                     helperText={errors.name?.message?.toString()}
                     variant="outlined"
@@ -76,7 +78,7 @@ const StockCreate = () => {
                   />
                 );
               }}
-            ></Controller>
+            />
 
             <Controller
               name="price"
