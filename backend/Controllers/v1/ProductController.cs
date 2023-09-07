@@ -2,6 +2,7 @@
 //using backend.Models;
 
 using backend.Database;
+using backend.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers.v1
@@ -10,16 +11,18 @@ namespace backend.Controllers.v1
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly DatabaseContext _databaseContext;
-        public ProductController(DatabaseContext databaseContext)
+        private readonly IProductRepository _productRepository;
+
+        public ProductController(IProductRepository productRepository)
         {
-            _databaseContext = databaseContext;
+            _productRepository = productRepository;
+
         }
 
         [HttpGet("")]
         public IActionResult GetProducts()
         {
-            var products = _databaseContext.Products.ToList();
+            var products = _productRepository.GetProducts();
             return Ok(products);
         }
     }
