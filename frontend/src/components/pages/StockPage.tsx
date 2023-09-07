@@ -6,7 +6,7 @@ import { authSelector } from "@/store/slices/authSlice";
 import { getProducts, stockSelector } from "@/store/slices/stockSlice";
 
 const columns: GridColDef[] = [
-  { field: "id", headerName: "Id", width: 70 },
+  { field: "productId", headerName: "Id", width: 70 },
   { field: "name", headerName: "Name", width: 330 },
   { field: "price", headerName: "Price", width: 130 },
   { field: "stock", headerName: "Stock", width: 130 },
@@ -23,6 +23,7 @@ export default function StockPage() {
   return (
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid
+        getRowId={(item) => item.productId}
         rows={stockReducer.stockAllResult}
         columns={columns}
         initialState={{
