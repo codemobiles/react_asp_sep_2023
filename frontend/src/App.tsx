@@ -15,7 +15,7 @@ import PublicRoutes from "./router/public.routes";
 import ProtectedRoutes from "./router/protected.routes";
 import ShopPage from "./components/pages/ShopPage";
 import { red } from "@mui/material/colors";
-
+import backgroundMenuImage from "@/assets/images/background_menu.jpg";
 const drawerWidth = 240;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
@@ -75,11 +75,22 @@ export default function App() {
 
   const theme = createTheme({
     components: {
+      MuiDrawer: {
+        styleOverrides: {
+          paper: {
+            backgroundImage: `url(${backgroundMenuImage})`,
+            backgroundRepeat: "no-repeat",
+            backgroundColor: "#ff00ff",
+            backgroundPosition: "bottom",
+            width: drawerWidth,
+          },
+        },
+      },
       MuiIcon: {
         styleOverrides: {
           root: {
-            borderWidth: 1,
-            borderColor: "red",
+            border: "2px solid red", // Replace 'red' with your desired border color
+            borderRadius: "50%", // If you want a circular border
           },
         },
       },
