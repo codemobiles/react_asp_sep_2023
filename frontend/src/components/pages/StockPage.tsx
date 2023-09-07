@@ -303,8 +303,8 @@ const Stock = () => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose} autoFocus>
+          <Button onClick={() => setOpenMyDialog(false)}>Disagree</Button>
+          <Button onClick={() => setOpenMyDialog(false)} autoFocus>
             Agree
           </Button>
         </DialogActions>
