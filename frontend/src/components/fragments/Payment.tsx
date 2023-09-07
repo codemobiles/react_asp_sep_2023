@@ -1,3 +1,4 @@
+import { Product } from "@/types/product.type";
 import React from "react";
 
 type Props = {
@@ -5,5 +6,14 @@ type Props = {
 };
 
 export default function Payment({ order }: Props) {
-  return <div>Payment {order}</div>;
+  return (
+    <div>
+      Payment
+      <ul>
+        {JSON.parse(order).map((e: Product) => (
+          <li>{e.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
