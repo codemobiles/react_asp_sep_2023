@@ -6,6 +6,7 @@ import { getTransactions, shopSelector } from "@/store/slices/shopSlice";
 import dayjs from "dayjs";
 import "dayjs/locale/th";
 import { NumericFormat } from "react-number-format";
+import { Typography } from "@mui/material";
 
 const columns: GridColDef[] = [
   { field: "transactionId", headerName: "ID", width: 70 },
@@ -17,7 +18,25 @@ const columns: GridColDef[] = [
       return dayjs(value).locale("th").add(543, "year").format("DD MMMM YYYY");
     },
   },
-  { field: "total", headerName: "Total", width: 130 },
+  {
+    field: "total",
+    headerName: "Total",
+    width: 130,
+    renderCell({ value }) {
+      return (
+        <Typography variant="body1">
+          <NumericFormat
+            value={value}
+            displayType={"text"}
+            thousandSeparator={true}
+            decimalScale={0}
+            fixedDecimalScale={true}
+            prefix={"฿"}
+          />
+        </Typography>
+      );
+    },
+  },
 ];
 
 export default function TransactionPage() {
