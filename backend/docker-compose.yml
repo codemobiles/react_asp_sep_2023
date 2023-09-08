@@ -6,6 +6,8 @@ services:
   backend:
     image: backend
     network_mode: bridge
+    links:
+      - mssql-server:database 
     build:
       context: .
       dockerfile: ./Dockerfile
