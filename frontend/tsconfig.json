@@ -25,7 +25,6 @@
       "@/*": ["./src/*"],
       "@/components/*": ["components/*"],
       "@/types/*": ["types/*"],
-      "@/constants/*": ["constants/*"],
       "@/utils/*": ["utils/*"],
       "@/store/*": ["store/*"],
       "@/router/*": ["router/*"],
