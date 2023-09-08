@@ -16,6 +16,32 @@ using (var context = new YourDbContext()) // Replace with your DbContext
 }
 --------------------------
 
+# rollback example with transaction
+---------------------------------------------
+    public void AddProduct(Product product, IFormFile image)
+        {
+            using (var transaction = _context.Database.BeginTransaction())
+            {
+                try
+                {
+                    string fileName = UploadProductImage(image);
+                    if (!String.IsNullOrEmpty(fileName))
+                    {
+                        product.Image = fileName;
+                    }
+
+                    _context.Add(product);
+                    _context.SaveChanges();
+                }
+                catch
+                {
+                    // Rollback Example
+                    transaction.Rollback();
+                }
+            }
+        }
+---------------------------------------------
+
 
 
 # vscode extension 
