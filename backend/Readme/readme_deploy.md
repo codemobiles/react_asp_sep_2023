@@ -44,12 +44,12 @@ cat appsettings.json
 
 # set running port in production (mac)
 
-- export ASPNETCORE_URLS=http://+:8081
+- export ASPNETCORE_URLS=http://+:8082
 - echo $ASPNETCORE_URLS
 
 # set running port in production (win)
 
-- set ASPNETCORE_URLS=http://+:8081
+- set ASPNETCORE_URLS=http://+:8082
 - echo %ASPNETCORE_URLS%
 
 # run the execution file

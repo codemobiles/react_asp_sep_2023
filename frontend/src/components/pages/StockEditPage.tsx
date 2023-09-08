@@ -189,9 +189,7 @@ const StockEdit = () => {
     if (watchPreviewImage) {
       return <img alt="" src={watchPreviewImage} className="h-[100px]" />;
     } else if (image) {
-      return (
-        <img alt="" src={`${imageUrl}/images/${image}`} className="h-[100px]" />
-      );
+      return <img alt="" src={`${imageUrl}/${image}`} className="h-[100px]" />;
     }
   };
 
