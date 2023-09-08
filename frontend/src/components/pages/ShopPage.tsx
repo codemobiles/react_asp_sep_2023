@@ -97,7 +97,7 @@ const Shop = () => {
           {/* Image Order  */}
           <img
             alt="to be done"
-            src={`${imageUrl}/images/${item.image}`}
+            src={`${imageUrl}/${item.image}`}
             className="w-12 h-12"
           />
 
@@ -149,7 +149,7 @@ const Shop = () => {
                       component="img"
                       alt="Contemplative Reptile"
                       className="h-28"
-                      image={`${imageUrl}/images/${item.image}`}
+                      image={`${imageUrl}/${item.image}`}
                       title="Contemplative Reptile"
                     />
                     <CardContent>
