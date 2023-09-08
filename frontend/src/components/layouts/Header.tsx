@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ handleDrawerOpen, open }) => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap component="div">
-          cmPOS - MERN STACK WORKSHOP V.{import.meta.env.VITE_VER}
+          cmPOS - REACT/.NET/MSSQL STACK WORKSHOP V.{import.meta.env.VITE_VER}
         </Typography>
 
         <Box className="grow" />
