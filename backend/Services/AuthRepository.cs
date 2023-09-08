@@ -16,10 +16,10 @@ namespace backend.Services
     public class AuthRepository : IAuthRepository
     {
         private readonly DatabaseContext _context;
-        
+
 
         public AuthRepository(DatabaseContext context)
-        {        
+        {
             _context = context;
         }
 
@@ -29,7 +29,7 @@ namespace backend.Services
             var token = String.Empty;
             if (result != null && VerifyPassword(result.Password!, user.Password!))
             {
-                token = "1234"; //BuildToken(result);
+                token = BuildToken(result);
             }
 
             return (result, token);
@@ -78,6 +78,31 @@ namespace backend.Services
                 numBytesRequested: 256 / 8));
 
             return passwordHash == hashed;
+        }
+
+        private string BuildToken(User user)
+        {
+            // key is case-sensitive
+            var claims = new[] {
+                new Claim(JwtRegisteredClaimNames.Sub, "For Testing"),
+                new Claim("id", user.Id.ToString()),
+                new Claim("username", user.Username),
+                new Claim(ClaimTypes.Role, user.Position ?? "Normal")
+            };
+
+            var expires = DateTime.Now.AddDays(Convert.ToDouble(_jwtSettings.Expire));
+            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.SecretKey));
+            var creds = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(
+                issuer: _jwtSettings.Issuer,
+                audience: _jwtSettings.Audience,
+                claims: claims,
+                expires: expires,
+                signingCredentials: creds
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
     }
