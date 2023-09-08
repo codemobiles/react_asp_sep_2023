@@ -5,9 +5,7 @@ version: '3.4'
 services:
   backend:
     image: backend
-    network_mode: bridge
-    links:
-      - mssql-server:database 
+    network_mode: bridge    
     build:
       context: .
       dockerfile: ./Dockerfile
