@@ -15,9 +15,13 @@ namespace backend.Controllers.v1
     public class ProductController : ControllerBase
     {
         private readonly IProductRepository _productRepository;
+        private readonly ILogger<ProductController> _logger;
 
-        public ProductController(IProductRepository productRepository)
+        public ProductController(IProductRepository productRepository,
+                ILogger<ProductController> logger
+        )
         {
+            _logger = logger;
             _productRepository = productRepository;
 
         }
@@ -25,6 +29,8 @@ namespace backend.Controllers.v1
         [HttpGet("")]
         public IActionResult GetProducts()
         {
+
+            _logger.LogInformation("CMDev: GetProducts");
             var products = _productRepository.GetProducts();
             return Ok(products);
         }
