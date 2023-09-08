@@ -15,6 +15,7 @@ namespace backend.Controller.v1
     //[EnableCors("AllowSpecificOrigins")]    
     // [ApiVersion("2.0", Deprecated = true)]
     [ApiController]
+    [Authorize]
     [Route("api/v1/[controller]")]
     public class TransactionController : ControllerBase
     {
