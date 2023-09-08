@@ -11,8 +11,10 @@ using backend.Services;
 
 namespace backend.Controllers.v2
 {
-    [Route("api/v1/[controller]")]
+    [ApiVersion("2.0")]
     [ApiController]
+    [Route("api/v{version:apiVersion}/[controller]")]
+
     public class AuthController : ControllerBase
     {
         private readonly IMapper _autoMapper;

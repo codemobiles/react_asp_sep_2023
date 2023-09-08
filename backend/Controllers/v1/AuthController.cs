@@ -11,8 +11,11 @@ using backend.Services;
 
 namespace backend.Controllers.v1
 {
-    [Route("api/v1/[controller]")]
+    // [Route("api/v1/[controller]")]
+
+    [ApiVersion("1.0")]
     [ApiController]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class AuthController : ControllerBase
     {
         private readonly IMapper _autoMapper;
@@ -30,7 +33,7 @@ namespace backend.Controllers.v1
             try
             {
                 // mapper tutorial - readme_mapper.md
-                var user = _autoMapper.Map<User>(userViewModel);                
+                var user = _autoMapper.Map<User>(userViewModel);
                 (User? result, string token) = _authRepository.Login(user);
 
                 if (result == null)
@@ -47,9 +50,9 @@ namespace backend.Controllers.v1
             }
             catch (Exception error)
             {
-                
+
                 return StatusCode(500, new { message = error });
-            }         
+            }
         }
 
         [HttpPost("register")]
@@ -57,7 +60,7 @@ namespace backend.Controllers.v1
         {
             var user = _autoMapper.Map<User>(viewmodel);
             _authRepository.Register(user);
-            return Ok();            
+            return Ok();
         }
 
     }
