@@ -101,7 +101,7 @@ export default function ReportPage() {
     scales: {
       y: {
         ticks: {
-          callback: function (value: any, _index: any, _values: any) {
+          callback: function (value: any, _index: any) {
             return "฿" + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           },
         },
@@ -115,7 +115,7 @@ export default function ReportPage() {
   }, []);
 
   return (
-    <Paper className="p-8">
+    <Paper elevation={7} className="p-8">
       <Typography variant="h1">Sale Chart</Typography>
       <ButtonGroup
         size="large"
