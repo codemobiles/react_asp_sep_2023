@@ -3,10 +3,20 @@ import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import { useAppDispatch } from "@/store/store";
 import { useSelector } from "react-redux";
 import { getTransactions, shopSelector } from "@/store/slices/shopSlice";
+import dayjs from "dayjs";
+import "dayjs/locale/th";
+import { NumericFormat } from "react-number-format";
 
 const columns: GridColDef[] = [
   { field: "transactionId", headerName: "ID", width: 70 },
-  { field: "timestamp", headerName: "Time", width: 130 },
+  {
+    field: "timestamp",
+    headerName: "Time",
+    width: 130,
+    renderCell({ value }) {
+      return dayjs(value).locale("th").add(543, "year").format("DD MMMM YYYY");
+    },
+  },
   { field: "total", headerName: "Total", width: 130 },
 ];
 
