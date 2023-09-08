@@ -1,10 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import store, { RootState } from "../store";
+import { RootState } from "../store";
 import { LoginResult, RegisterResult } from "@/types/auth-result.type";
 import { httpClient } from "@/utils/HttpClient";
 import { User } from "@/types/user.type";
 import { server } from "@/utils/constants";
-import { useSelector } from "react-redux";
 
 export interface AuthState {
   loginResult?: LoginResult;
@@ -26,16 +25,15 @@ export const addWithDelay = createAsyncThunk("addWithDelay", async () => {
   // get result from server (delay 1 secs)
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  // return store.getState().authReducer.count + 1;  
-  const store = ()=>import("@/store/store")
-  return (await store()).default.getState().authReducer.count + 1
-  
+  // return store.getState().authReducer.count + 1;
+  const store = () => import("@/store/store");
+  return (await store()).default.getState().authReducer.count + 1;
 });
 
 export const removeWithDelay = createAsyncThunk("removeWithDelay", async () => {
   // get result from server (delay 1 secs)
   await new Promise((resolve) => setTimeout(resolve, 1000));
-  const store = () => import("@/store/store");          
+  const store = () => import("@/store/store");
   return (await store()).default.getState().authReducer.count - 1;
 });
 
@@ -75,20 +73,20 @@ const authSlice = createSlice({
       state.count--;
     },
     logout: (state) => {
-      state.isAuthented = false
+      state.isAuthented = false;
       localStorage.clear();
     },
     relogin: (state) => {
-        const _token = localStorage.getItem(server.TOKEN_KEY);
-        if (_token) {
-          state.loginResult = {
-            token: _token,
-            result: "ok",
-          };
-          state.isAuthented = true;
-        }
-        state.isAuthenticating = false;
-      },
+      const _token = localStorage.getItem(server.TOKEN_KEY);
+      if (_token) {
+        state.loginResult = {
+          token: _token,
+          result: "ok",
+        };
+        state.isAuthented = true;
+      }
+      state.isAuthenticating = false;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(addWithDelay.fulfilled, (state, action) => {
@@ -109,10 +107,10 @@ const authSlice = createSlice({
 
     // login failed
     builder.addCase(login.rejected, (state) => {
-        state.isAuthented = false;
-        state.isError = true;        
-        state.isAuthenticating = false;
-      });
+      state.isAuthented = false;
+      state.isError = true;
+      state.isAuthenticating = false;
+    });
   },
 });
 

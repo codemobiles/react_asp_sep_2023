@@ -3,8 +3,6 @@ import join from "url-join";
 import { server, apiUrl } from "./constants";
 
 import { logout } from "@/store/slices/authSlice";
-import React from "react";
-
 
 const isAbsoluteURLRegex = /^(?:\w+:)\/\//;
 
@@ -14,7 +12,7 @@ axios.interceptors.request.use(async (config: any) => {
   }
 
   // demo how to intercept
-  // await new Promise(resolve => setTimeout(resolve, 5000))    
+  // await new Promise(resolve => setTimeout(resolve, 5000))
 
   const userToken = localStorage.getItem(server.TOKEN_KEY);
   if (userToken) {
@@ -30,7 +28,7 @@ axios.interceptors.response.use(
   },
   async (error) => {
     console.log(JSON.stringify(error, undefined, 2));
-    const store = () => import("@/store/store");        
+    const store = () => import("@/store/store");
     (await store()).default.dispatch(logout());
   }
 );

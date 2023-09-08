@@ -1,5 +1,4 @@
 import loginBg from "@/assets/images/bg4.jpg";
-import CMButton from "@/components/fragments/CMButton";
 import { authSelector, login } from "@/store/slices/authSlice";
 import { useAppDispatch } from "@/store/store";
 import { User } from "@/types/user.type";
@@ -108,8 +107,7 @@ const Login = () => {
 
         {authReducer.isError && <Alert severity="error">Login failed</Alert>}
 
-        <CMButton
-          isGraident={true}
+        <Button
           sx={classes.submitBtn}
           type="submit"
           fullWidth
@@ -117,7 +115,7 @@ const Login = () => {
           color="primary"
         >
           Login
-        </CMButton>
+        </Button>
 
         <Button
           onClick={() => {

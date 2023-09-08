@@ -1,5 +1,4 @@
-import { Button, Card, Grid, Typography } from "@mui/material";
-import React from "react";
+import { Card, Grid, Typography } from "@mui/material";
 
 type Props = {
   title: string;

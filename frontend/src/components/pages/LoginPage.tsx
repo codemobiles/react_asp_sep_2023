@@ -1,5 +1,10 @@
 import loginBg from "@/assets/images/bg4.jpg";
-import { add, addWithDelay, authSelector, login, remove, removeWithDelay } from "@/store/slices/authSlice";
+import {
+  addWithDelay,
+  authSelector,
+  login,
+  removeWithDelay,
+} from "@/store/slices/authSlice";
 import { useAppDispatch } from "@/store/store";
 import { User } from "@/types/user.type";
 import { yupResolver } from "@hookform/resolvers/yup";
