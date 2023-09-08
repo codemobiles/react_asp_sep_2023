@@ -134,7 +134,7 @@ const Stock = () => {
       renderCell: ({ value }: GridRenderCellParams) => (
         <img
           alt=""
-          src={`${imageUrl}/images/${value}?dummy=${Math.random()}`}
+          src={`${imageUrl}/${value}?dummy=${Math.random()}`}
           className="w-[70px] h-[70px] rounded-[5%]"
         />
       ),
@@ -260,9 +260,7 @@ const Stock = () => {
         <DialogTitle id="alert-dialog-slide-title">
           <img
             alt=""
-            src={`${imageUrl}/images/${
-              selectedProduct?.image
-            }?dummy=${Math.random()}`}
+            src={`${imageUrl}/${selectedProduct?.image}?dummy=${Math.random()}`}
             className="w-[100px] rounded-[5%]"
           />
           <br />

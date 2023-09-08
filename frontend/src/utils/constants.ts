@@ -16,8 +16,13 @@ export const NETWORK_TIMEOUT_MESSAGE =
 export const UPLOAD_PHOTO_FAIL_MESSAGE =
   "An error has occurred. The photo was unable to upload.";
 
-export const apiUrl = "https://localhost:8081/api/v1";
-export const imageUrl = "https://localhost:8081";
+// export const apiUrl = "https://localhost:8081/api/v1";
+// export const imageUrl = "https://localhost:8081";
+
+const baseUrl =  import.meta.env.VITE_NODE_URL ?? "https://localhost:8081"
+export const apiUrl =  baseUrl + "/api/v1";
+export const imageUrl = baseUrl + "/images";
+
 
 export const server = {
   LOGIN_URL: `Auth/login`,
