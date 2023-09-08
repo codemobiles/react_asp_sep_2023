@@ -47,10 +47,9 @@ export default function TransactionPage() {
 
   return (
     <div style={{ height: 400, width: "100%" }}>
-      {shopReducer.transactionAllResult && JSON.stringify(shopReducer.transactionAllResult)}
-
       <DataGrid
-        rows={rows}
+        getRowId={(item) => item.transactionId}
+        rows={shopReducer.transactionAllResult}
         columns={columns}
         initialState={{
           pagination: {
