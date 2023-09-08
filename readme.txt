@@ -1,6 +1,22 @@
 # new master project 
 https://drive.google.com/file/d/1HZaKCXnpiYqsKzYFjsyrXkQXJiB4wbUF/view?usp=sharing
 
+ตัวอย่างการ Multiple Insert
+using (var context = new YourDbContext()) // Replace with your DbContext
+{
+    var entitiesToAdd = new List<YourEntity>
+    {
+        new YourEntity { Property1 = "Value1", Property2 = "Value2" },
+        new YourEntity { Property1 = "Value3", Property2 = "Value4" },
+        // Add more entities as needed
+    };
+
+    context.YourDbSet.AddRange(entitiesToAdd);
+    context.SaveChanges();
+}
+--------------------------
+
+
 
 # vscode extension 
 code --install-extension dsznajder.es7-react-js-snippets
