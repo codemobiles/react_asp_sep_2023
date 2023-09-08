@@ -1,3 +1,7 @@
+# new master project 
+https://drive.google.com/file/d/1HZaKCXnpiYqsKzYFjsyrXkQXJiB4wbUF/view?usp=sharing
+
+
 # vscode extension 
 code --install-extension dsznajder.es7-react-js-snippets
 code --install-extension vscode-icons-team.vscode-icons
