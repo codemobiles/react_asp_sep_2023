@@ -5,9 +5,11 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 
+<!-- BEGIN: XML comments for Swashbuckle - this will generate ../bin/backend.xml -->
+    <!-- https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props -->
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
-
+    <!-- END: XML comments for Swashbuckle -->
   </PropertyGroup>
 
   <ItemGroup>

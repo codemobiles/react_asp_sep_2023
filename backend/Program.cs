@@ -31,6 +31,11 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
 // End to load services (repository)
 
 
+// Write log file
+builder.Host.ConfigureLogging((hostingContext, builder) => { builder.AddFile("Logs/cmpos_api-{Date}.txt", LogLevel.Debug, null, false, null, null); });
+
+
+
 // "aString".Lek();
 
 var app = builder.Build();
@@ -40,6 +45,13 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    // This will allow swagger to show two options (right side) of definition to view the api version.
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "CodeMobile API V1");
+        c.SwaggerEndpoint("/swagger/v2/swagger.json", "CodeMobile API V2");
+    });
 }
 
 
